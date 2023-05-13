@@ -11,7 +11,7 @@ export default function LearnWithUsHero() {
         <Image
           src={heroImage}
           alt="imagen cover"
-          priority={true}
+          loading="eager"
           quality={100}
           width={500}
           height={500}
@@ -21,7 +21,7 @@ export default function LearnWithUsHero() {
         <Image
           src={heroImageMobile}
           alt="imagen cover"
-          priority={true}
+          loading="eager"
           quality={100}
           width={500}
           height={500}

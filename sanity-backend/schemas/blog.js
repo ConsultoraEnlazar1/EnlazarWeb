@@ -38,13 +38,13 @@ export default {
       validation: (Rule) => Rule.required().positive(),
     },
 
-    /* {
+    {
         name: 'mainImage',
         type: 'image',
         title: 'Imagen',
         options: {hotspot: true},
         validation: (Rule) => Rule.required(),
-      }, */
+      },
 
     {
       name: 'description',

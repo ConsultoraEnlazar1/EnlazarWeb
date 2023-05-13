@@ -30,13 +30,11 @@ const Community = () => {
 				<Image
 					src={Background}
 					alt='Header'
-					priority
 					className='xsm:hidden md:block md:object-none lg:object-cover h-full'
 				/>
 				<Image
 					src={BackgroundMobile}
 					alt='Header'
-					priority
 					className='xsm:block md:hidden'
 				/>
 				<div className='absolute left-0 right-0 bottom-0 top-0 xsm:h-[225px] md:h-[600px] lg:h-[490px]'>
@@ -66,7 +64,7 @@ const Community = () => {
 							width='110'
 							height='110'
 							alt='Header'
-							priority
+	
 							className=''
 						/>
 						<p className='font-medium text-center'>Tips y consejos</p>
@@ -77,7 +75,7 @@ const Community = () => {
 							width='110'
 							height='110'
 							alt='Header'
-							priority
+	
 							className=''
 						/>
 						<p className='font-medium text-center'>Ofertas de empleo</p>
@@ -88,7 +86,7 @@ const Community = () => {
 							width='110'
 							height='110'
 							alt='Header'
-							priority
+	
 							className=''
 						/>
 						<p className='font-medium text-center'>Charlas en vivo</p>
@@ -99,7 +97,7 @@ const Community = () => {
 							width='110'
 							height='110'
 							alt='Header'
-							priority
+	
 							className=''
 						/>
 						<p className='font-medium text-center'>
@@ -112,7 +110,7 @@ const Community = () => {
 							width='110'
 							height='110'
 							alt='Header'
-							priority
+	
 							className=''
 						/>
 						<p className='font-medium text-center'>Webinars gratuitos</p>
@@ -123,7 +121,7 @@ const Community = () => {
 							width='110'
 							height='110'
 							alt='Header'
-							priority
+	
 							className=''
 						/>
 						<p className='font-medium text-center'>
@@ -143,7 +141,6 @@ const Community = () => {
 				<Image
 					src={Airplane}
 					alt='Avion volando'
-					priority
 					className='xsm:hidden md:block'
 				/>
 				<div className='md:absolute left-0 right-0 bottom-0 xsm:top-24 md:top-32'>
@@ -177,7 +174,6 @@ const Community = () => {
 				<Image
 					src={Airplane}
 					alt='Avion volando'
-					priority
 					className='xsm:block md:hidden'
 				/>
 			</section>

@@ -125,7 +125,6 @@ const ConsultationForm = ({ handleCloseForm, section, title, setTitle }) => {
                   <Image
                     src={closeIcon}
                     alt="Logo cerrar detalles"
-                    priority={true}
                     style={styledLogo}
                     width={30}
                     height={30}

@@ -83,7 +83,7 @@ export const OurServices = ({ services }) => {
           <Image
             src={coverImage}
             alt="imagen cover"
-            priority={true}
+            loading="eager"
             quality={100}
             width={1000}
             height={1000}
@@ -118,7 +118,6 @@ export const OurServices = ({ services }) => {
                   className="rounded-t-lg w-52 "
                   src={logoIndividuos}
                   alt="individuos"
-                  priority={true}
                   width={200}
                   height={200}
                 />
@@ -140,7 +139,6 @@ export const OurServices = ({ services }) => {
                   className="rounded-t-lg w-52 "
                   src={logoOrg}
                   alt="empresa"
-                  priority={true}
                   width={200}
                   height={200}
                 />
@@ -168,7 +166,6 @@ export const OurServices = ({ services }) => {
           <Image
             src={coverImageCv}
             alt="imagen cover"
-            priority={true}
             quality={100}
             width={1000}
             height={1000}
