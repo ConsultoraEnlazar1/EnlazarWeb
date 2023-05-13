@@ -338,7 +338,6 @@ export const Navbar = () => {
           <Link
             href="/auth"
             className="hidden xl:flex mt-2 ml-6 text-dark hover:text-darkBlue font-bold xl:font-medium text-base border rounded px-2 py-2 bg-yellow whitespace-nowrap"
-            onClick={handleLogInBtn}
           >
             Iniciar sesión
           </Link>
