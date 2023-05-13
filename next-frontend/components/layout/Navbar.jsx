@@ -101,7 +101,6 @@ export const Navbar = () => {
   const handleSignOut = async () => {
     handleCloseUserMenu();
     const { error } = await supabase.auth.signOut();
-    setPreviousPath(route);
     router.push("/auth");
   };
 
@@ -112,15 +111,8 @@ export const Navbar = () => {
     return user;
   };
 
-  const handleLogInBtn = (e) => {
-    if (currentPath !== "/auth") {
-      setPreviousPath(currentPath);
-      setCurrentPath("/auth");
-    }
-  };
-
   useEffect(() => {
-    const altName = (async function getProfile() {
+    const altName = async function getProfile() {
       try {
         let { data, error, status } = await supabase
           .from("profiles")
@@ -131,7 +123,11 @@ export const Navbar = () => {
       } catch {
         setName("");
       }
-    })();
+    };
+
+    if (user) {
+      altName();
+    }
   }, [user]);
 
   const icon = {
@@ -148,7 +144,7 @@ export const Navbar = () => {
     <nav className="w-full bg-white text-dark shadow font-Noah fixed h-28 z-50">
       <div className="mx-6 justify-between xl:mx-auto xl:max-w-7xl xl:items-center xl:flex xl:px-6 mt-4">
         <div className="flex items-center justify-between py-3 xl:py-5 xl:block">
-          <Link href="/#top" onClick={() => setCurrentPath("/")}>
+          <Link href="/#top">
             <Image
               src={path}
               style={{
@@ -208,7 +204,6 @@ export const Navbar = () => {
               <Link
                 className="flex flex-1 w-full justify-center self-center"
                 href="/team#top"
-                onClick={() => setCurrentPath("/team")}
               >
                 Equipo
               </Link>
@@ -217,7 +212,6 @@ export const Navbar = () => {
               <Link
                 className="flex flex-1 w-full justify-center self-center"
                 href="/services#top"
-                onClick={() => setCurrentPath("/services")}
               >
                 Servicios
               </Link>
@@ -226,7 +220,6 @@ export const Navbar = () => {
               <Link
                 className="flex flex-1 w-full justify-center self-center"
                 href="/courses#top"
-                onClick={() => setCurrentPath("/courses")}
               >
                 Cursos & Capacitaciones
               </Link>
@@ -235,7 +228,6 @@ export const Navbar = () => {
               <Link
                 className="flex flex-1 w-full justify-center self-center"
                 href="/community#top"
-                onClick={() => setCurrentPath("/community")}
               >
                 Comunidad
               </Link>
@@ -252,7 +244,6 @@ export const Navbar = () => {
               <Link
                 className="flex flex-1 w-full justify-center self-center"
                 href="/#contact"
-                onClick={() => setCurrentPath("/#contact")}
                 scroll={false}
               >
                 Contacto
@@ -263,7 +254,6 @@ export const Navbar = () => {
                 <Link
                   href="/auth"
                   className="flex xl:hidden text-dark hover:text-darkBlue font-bold xl:font-medium text-base border rounded px-2 py-2 bg-yellow whitespace-nowrap"
-                  onClick={handleLogInBtn}
                 >
                   Iniciar sesión
                 </Link>
