@@ -116,7 +116,6 @@ const ContactUsForm = () => {
             width={600}
             height={600}
             alt="Background Img"
-            priority
             className="w-auto h-auto"
           />
         </div>

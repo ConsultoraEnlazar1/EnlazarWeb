@@ -136,7 +136,6 @@ export default function Details({
                 <Image
                   src={closeIcon}
                   alt="Logo cerrar detalles"
-                  priority={true}
                   width={32}
                   height={32}
                   className="md:w-10 md:h-10"

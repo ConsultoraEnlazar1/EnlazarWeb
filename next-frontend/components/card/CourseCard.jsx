@@ -45,7 +45,7 @@ const CourseCard = ({ course, handleOpenForm }) => {
             src={urlFor(mainImage).url()}
             width={150}
             height={150}
-            priority={true}
+            loading="eager"
           />
         </div>
         <div className={styles.content}>

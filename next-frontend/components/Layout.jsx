@@ -127,7 +127,6 @@ export const Layout = ({ title, content, children }) => {
             alt="Logo WhatsApp"
             width={50}
             height={50}
-            priority
             className="fixed bottom-5 right-5 hover:w-[52px] hover:transition-all z-10 drop-shadow-lg"
           />
         </Link>

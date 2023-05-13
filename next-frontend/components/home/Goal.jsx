@@ -11,7 +11,7 @@ export const Goal = () => {
           alt="Somos Enlazar hero"
           src="/images/nuestro-objetivo.webp"
           quality={100}
-          priority={true}
+          loading="eager"
           width={500}
           height={500}
         />

@@ -152,7 +152,7 @@ export const Navbar = () => {
                 height: "37.5px",
                 objectFit: "scale-down",
               }}
-              priority={true}
+              loading="eager"
               alt="Consultora Enlazar Logo"
             />
           </Link>
