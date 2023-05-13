@@ -29,5 +29,3 @@
 
 # Typescript
 *.tsbuildinfo
-
-/package-lock.json
