@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        {/* <script
+        <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
         ></script>
@@ -41,7 +41,7 @@ export default function Document() {
             });
               `,
           }}
-        /> */}
+        />
       </Head>
       <body>
         <Main />

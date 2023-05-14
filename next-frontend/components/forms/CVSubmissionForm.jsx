@@ -205,6 +205,7 @@ const WorkWithUsForm = ({
               >
                 <div className="w-full flex flex-col md:flex-row justify-evenly items-center">
                   <div className="flex flex-col w-full justify-center md:w-2/4 md:mr-2 md:mb-0">
+                    <input type="hidden" name="_subject" value={title} />
                     <input type="hidden" name="_next" value={pathname} />
                     <input type="hidden" name="_template" value="box" />
                     <input type="hidden" name="_captcha" value="false" />
