@@ -25,7 +25,6 @@ export const Footer = () => {
   };
 
   const handleRedirect = (e) => {
-    console.log(e.target.accessKey);
     localStorage.setItem("pathname", e.target.accessKey);
   };
 

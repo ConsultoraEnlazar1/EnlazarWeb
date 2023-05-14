@@ -125,9 +125,6 @@ const WorkWithUsForm = ({
       }
     }
     if (data) {
-      console.log(data, "data");
-      console.log(input, "input");
-
       setData({
         name: "",
         phone: "",
