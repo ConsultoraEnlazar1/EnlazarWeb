@@ -7,7 +7,6 @@ import PrivacyPolicy from "@/components/privacyPolitics/PrivacyPolicy";
 import { googleAnalyticsId, supabaseKey, supabaseUrl } from "@/lib/enviroment";
 import { SessionContextProvider, useUser } from "@supabase/auth-helpers-react";
 import supabase from "@/lib/supabaseClient";
-import { AuthProvider } from "../lib/AuthContext";
 
 export default function App({ Component, pageProps }) {
   /*  const router = useRouter();
@@ -38,21 +37,20 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <AuthProvider supabase={supabase}>
-        <SessionContextProvider
-          supabaseClient={supabase}
-          initialSession={pageProps.initialSession}
-        >
-          <Component {...pageProps} />
-          {open ? (
-            <PrivacyPolicy
-              handleClose={handleClose}
-              scroll={scroll}
-              open={open}
-            />
-          ) : null}
+      <SessionContextProvider
+        supabaseClient={supabase}
+        initialSession={pageProps.initialSession}
+      >
+        <Component {...pageProps} />
+        {open ? (
+          <PrivacyPolicy
+            handleClose={handleClose}
+            scroll={scroll}
+            open={open}
+          />
+        ) : null}
 
-          {/* <CookieConsent
+        {/* <CookieConsent
         location="bottom"
         buttonText="Sí, utilizar cookies"
         cookieName="CookieConsent"
@@ -99,8 +97,7 @@ export default function App({ Component, pageProps }) {
           <strong>Política de Protección de Datos</strong>
         </Link>
       </CookieConsent> */}
-        </SessionContextProvider>
-      </AuthProvider>
+      </SessionContextProvider>
     </>
   );
 }

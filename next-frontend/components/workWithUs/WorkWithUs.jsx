@@ -2,9 +2,8 @@ import { useSession } from "@supabase/auth-helpers-react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import WorkWithUsImage from "public/images/trabaja-con-nosotros.webp";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import WorkWithUsForm from "../forms/CVSubmissionForm";
-import { useAuth } from "@/lib/AuthContext";
 
 const WorkWithUs = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,14 +11,13 @@ const WorkWithUs = () => {
   const route = useRouter();
   const description = "Adjuntá tu CV y contanos un poco sobre vos.";
   const title = "¡Formá parte del team Enlazar!";
-  const { currentPath, setCurrentPath, setPreviousPath } = useAuth();
+
   const handleOpenCv = (e) => {
     e.preventDefault();
     if (session) {
       setIsOpen(true);
     } else {
-      setPreviousPath("/team#workWithUs");
-      setCurrentPath("/auth");
+      localStorage.setItem("pathname", "team#workWithUs");
       route.push("/auth");
     }
   };

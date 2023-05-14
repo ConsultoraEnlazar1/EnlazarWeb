@@ -1,19 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import logoIndividuos from "public/images/card-individuos-grupos.webp";
 import logoOrg from "public/images/card-empresas.webp";
 import Image from "next/image";
 import ServicesCard from "@/components/card/ServicesCard";
 import ConsultationForm from "../../components/forms/ConsultationForm";
-
 import Link from "next/link";
-
 import styles from "./OurServices.module.css";
 import coverImage from "public/images/portada-servicios.webp";
 import coverImageCv from "public/images/revision-cv-gratis.webp";
 import WorkWithUsForm from "../forms/CVSubmissionForm";
 import { useSession } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
-import { useAuth } from "@/lib/AuthContext";
 
 export const OurServices = ({ services }) => {
   const servicesCvFormTitle = "¡RECURSOS GRATIS!";
@@ -24,7 +21,6 @@ export const OurServices = ({ services }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [title, setTitle] = useState("");
   const [section, setSection] = useState("");
-  const { setCurrentPath, setPreviousPath } = useAuth();
   const session = useSession();
   const route = useRouter();
 
@@ -46,8 +42,7 @@ export const OurServices = ({ services }) => {
     if (session) {
       setIsOpen(true);
     } else {
-      setPreviousPath("/services#freeResources");
-      setCurrentPath("/auth");
+      localStorage.setItem("pathname", "services#freeResources");
       route.push("/auth");
     }
   };

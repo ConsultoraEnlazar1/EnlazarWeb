@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -22,7 +22,6 @@ import Box from "@mui/material/Box";
 import Tooltip from "@mui/material/Tooltip";
 import Avatar from "@mui/material/Avatar";
 import { useUser, useSupabaseClient } from "@supabase/auth-helpers-react";
-import { useAuth } from "@/lib/AuthContext";
 // import AccountCircle from '@mui/icons-material/AccountCircle';
 
 const AccountMenu = ({
@@ -85,7 +84,6 @@ export const Navbar = () => {
   const path = route === "/courses" ? birrete : logo;
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [name, setName] = useState("");
-  const { currentPath, setCurrentPath, setPreviousPath } = useAuth();
 
   const settings = ["Perfil", "Cuenta", "Dashboard", "Salir"];
   const supabase = useSupabaseClient();
@@ -104,6 +102,11 @@ export const Navbar = () => {
     router.push("/auth");
   };
 
+  const handleRedirect = (e) => {
+    console.log(e.target.accessKey);
+    localStorage.setItem("pathname", e.target.accessKey);
+  };
+
   const getUserName = async () => {
     const {
       data: { user },
@@ -112,7 +115,7 @@ export const Navbar = () => {
   };
 
   useEffect(() => {
-    const altName = async function getProfile() {
+    const altName = (async function getProfile() {
       try {
         let { data, error, status } = await supabase
           .from("profiles")
@@ -123,11 +126,7 @@ export const Navbar = () => {
       } catch {
         setName("");
       }
-    };
-
-    if (user) {
-      altName();
-    }
+    })();
   }, [user]);
 
   const icon = {
@@ -144,7 +143,7 @@ export const Navbar = () => {
     <nav className="w-full bg-white text-dark shadow font-Noah fixed h-28 z-50">
       <div className="mx-6 justify-between xl:mx-auto xl:max-w-7xl xl:items-center xl:flex xl:px-6 mt-4">
         <div className="flex items-center justify-between py-3 xl:py-5 xl:block">
-          <Link href="/#top">
+          <Link href="/#top" onClick={handleRedirect}>
             <Image
               src={path}
               style={{
@@ -204,6 +203,8 @@ export const Navbar = () => {
               <Link
                 className="flex flex-1 w-full justify-center self-center"
                 href="/team#top"
+                accessKey="team"
+                onClick={handleRedirect}
               >
                 Equipo
               </Link>
@@ -212,6 +213,8 @@ export const Navbar = () => {
               <Link
                 className="flex flex-1 w-full justify-center self-center"
                 href="/services#top"
+                accessKey="services"
+                onClick={handleRedirect}
               >
                 Servicios
               </Link>
@@ -220,6 +223,8 @@ export const Navbar = () => {
               <Link
                 className="flex flex-1 w-full justify-center self-center"
                 href="/courses#top"
+                accessKey="courses"
+                onClick={handleRedirect}
               >
                 Cursos & Capacitaciones
               </Link>
@@ -228,6 +233,8 @@ export const Navbar = () => {
               <Link
                 className="flex flex-1 w-full justify-center self-center"
                 href="/community#top"
+                accessKey="community"
+                onClick={handleRedirect}
               >
                 Comunidad
               </Link>
@@ -245,6 +252,8 @@ export const Navbar = () => {
                 className="flex flex-1 w-full justify-center self-center"
                 href="/#contact"
                 scroll={false}
+                accessKey="#contact"
+                onClick={handleRedirect}
               >
                 Contacto
               </Link>

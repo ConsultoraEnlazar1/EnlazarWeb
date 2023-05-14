@@ -63,7 +63,6 @@ export default function PersonalData({ session }) {
 
   async function updateProfile(e) {
     e.preventDefault();
-
     try {
       // setLoading(true);
 
@@ -106,7 +105,7 @@ export default function PersonalData({ session }) {
         draggable
         pauseOnHover
         theme="light"
-        style={{ width: "00px" }}
+        style={{ width: "300px" }}
       />
       <div className="flex flex-col w-full justify-center items-center">
         <div className="flex w-3/4 justify-center items-center">
@@ -187,6 +186,7 @@ export default function PersonalData({ session }) {
               <select
                 name="country"
                 id="country"
+                value={input.country}
                 className="flex w-full h-10 md:h-[3.3rem] py-1 px-4 md:py-2 md:px-4 border border-solid border-grey rounded-xl text-sm md:text-lg bg-transparent"
                 onChange={handleOnChange}
                 defaultValue={
