@@ -55,9 +55,9 @@ const ConsultationForm = ({ handleCloseForm, section, title, setTitle }) => {
   useEffect(() => {
     const path = localStorage.getItem("pathname");
     if (path) {
-      setPathname("http://localhost:3000/" + path);
+      setPathname("https://enlazar-web.vercel.app/" + path);
     } else {
-      setPathname("http://localhost:3000/");
+      setPathname("https://enlazar-web.vercel.app/");
     }
   }, [pathname]);
 
