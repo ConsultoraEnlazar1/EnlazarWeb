@@ -16,6 +16,7 @@ const Values = () => {
             alt="Nuestros valores"
             width="1200"
             height="1200"
+            priority={true}
           ></Image>
         </div>
         <div className="font-semibold md:hidden xsm:block">

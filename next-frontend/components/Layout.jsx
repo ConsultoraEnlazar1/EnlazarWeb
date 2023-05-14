@@ -104,10 +104,10 @@ export const Layout = ({ title, content, children }) => {
         <meta name="twitter:card" content="summary" />
         <meta property="og:title" content="Consultora Enlazar" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://consultoraenlazar.com.ar" />
+        <meta property="og:url" content="https://www.consultoraenlazar.xyz" />
         <meta
           property="og:image"
-          content="https://consultoraenlazar.com.ar/images/logo-enlazar-ogp.jpg"
+          content="https://www.consultoraenlazar.xyz/images/logo-enlazar-ogp.jpg"
         />
       </Head>
       <>
