@@ -1,7 +1,6 @@
 import { Layout } from "@/components/Layout";
 import { Blogs } from "@/components/Blog/Blogs";
 import { useSession } from "@supabase/auth-helpers-react";
-import { useAuth } from "@/lib/AuthContext";
 import { useEffect } from "react";
 import SignIn from "@/components/session/SignIn";
 import { getClient } from "@/lib/sanity.server";
@@ -9,11 +8,9 @@ import groq from "groq";
 
 const Blog = ({ blogs }) => {
   const session = useSession();
-  const { setCurrentPath, setPreviousPath } = useAuth();
 
   useEffect(() => {
-    setCurrentPath("/auth");
-    setPreviousPath("/blog");
+    localStorage.setItem("pathname", "blog");
   }, []);
 
   return (

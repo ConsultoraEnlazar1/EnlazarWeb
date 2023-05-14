@@ -1,39 +1,38 @@
 import { Auth } from "@supabase/auth-ui-react";
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
-import { useEffect, useMemo, useState } from "react";
-import { useAuth } from "@/lib/AuthContext";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 const SignIn = () => {
   const supabase = useSupabaseClient();
-  const {
-    currentPath,
-    setCurrentPath,
-    previousPath,
-    authState,
-    handleAuthStateChange,
-  } = useAuth();
+
   const router = useRouter();
   const session = useSession();
+  const [authState, setAuthState] = useState("SIGNED_IN");
 
-  const memorizedPath = useMemo(() => {
-    return previousPath;
-  }, [previousPath]);
+  let handleAuthStateChange;
+  useEffect(() => {
+    handleAuthStateChange = supabase.auth.onAuthStateChange((event) => {
+      setAuthState(event);
+    });
+  }, []);
 
   useEffect(() => {
+    localStorage.setItem("currentPath", router.pathname);
+    const pathname = localStorage.getItem("pathname");
     if (
       session &&
       authState === "USER_UPDATED" &&
       router.pathname === "/auth/resetPassword"
     ) {
-      router.push(memorizedPath);
+      router.push(`/${pathname}`);
     }
     if (session && router.pathname !== "/auth/resetPassword") {
-      router.push(memorizedPath);
+      router.push(`/${pathname}`);
     }
   }, [session, authState]);
-  console.log(previousPath, currentPath);
+
   return (
     <div
       className="w-full h-full flex justify-center items-center font-Noah"
@@ -88,7 +87,7 @@ const SignIn = () => {
                 loading_button_label: "Enviando instrucciones...",
                 link_text: "Olvidaste tu contraseña?",
                 confirmation_text:
-                  "Revise su correo electrónico para encontrar el enlace de restablecimiento de contraseña.",
+                  "Revise su correo electrónico, incluyendo la casilla de spam, para encontrar el enlace de restablecimiento de contraseña.",
               },
               update_password: {
                 password_label: "Ingresa una nueva contraseña",
@@ -123,6 +122,11 @@ const SignIn = () => {
                 fontFamily: "Noah Text",
                 fontSize: "clamp(0.8rem, 0.7256rem + 0.3967vw, 1.1rem)",
                 borderRadius: "35px",
+              },
+              message: {
+                fontFamily: "Noah Text",
+                color: "green",
+                fontSize: "clamp(1rem, 0.2262rem + 0.9524vw, 1.125rem)",
               },
             },
             theme: ThemeSupa,

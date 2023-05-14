@@ -9,14 +9,12 @@ import {
 } from "react-icons/fa";
 import Image from "next/image";
 import logo from "public/images/isotipo-enlazar-blanco.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import PrivacyPolicy from "../privacyPolitics/PrivacyPolicy";
-import { useAuth } from "@/lib/AuthContext";
 
 export const Footer = () => {
   const [open, setOpen] = useState(false);
   const [scroll, setScroll] = useState("paper");
-  const { setCurrentPath } = useAuth();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -24,6 +22,10 @@ export const Footer = () => {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleRedirect = (e) => {
+    localStorage.setItem("pathname", e.target.accessKey);
   };
 
   const gradient = {
@@ -52,7 +54,7 @@ export const Footer = () => {
           <div className="flex flex-row xsm:max-xl:flex-col justify-center items-center xsm:max-sm:w-full">
             <div className="flex flex-row justify-center items-center ">
               <div className="pt-3 px-0 pb-4 xsm:max-md:hidden ">
-                <Link href="/#top" onClick={() => setCurrentPath("/")}>
+                <Link href="/#top" onClick={handleRedirect}>
                   <Image
                     className="min-w-[60px]"
                     width={60}
@@ -65,12 +67,22 @@ export const Footer = () => {
               <div className="flex flex-row justify-center items-center m-0 list-none w-full md:max-sm:pt-12 xsm:max-xl:flex-col">
                 <ul className="flex flex-row border-r-0 justify-center items-center self-center no-underline text-white list-none xsm:max-md:flex-col py-2 px-2 xsm:max-md:p-0 ">
                   <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
-                    <Link href="/team#top" className="hover:font-bold">
+                    <Link
+                      href="/team#top"
+                      className="hover:font-bold"
+                      accessKey="team"
+                      onClick={handleRedirect}
+                    >
                       Equipo
                     </Link>
                   </li>
                   <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
-                    <Link href="/services#top" className="hover:font-bold">
+                    <Link
+                      href="/services#top"
+                      className="hover:font-bold"
+                      accessKey="services"
+                      onClick={handleRedirect}
+                    >
                       Servicios
                     </Link>
                   </li>
@@ -78,12 +90,19 @@ export const Footer = () => {
                     <Link
                       href="/courses#top"
                       className="hover:font-bold whitespace-nowrap"
+                      accessKey="courses"
+                      onClick={handleRedirect}
                     >
                       Cursos & Capacitaciones
                     </Link>
                   </li>
                   <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
-                    <Link href="/community#top" className="hover:font-bold">
+                    <Link
+                      href="/community#top"
+                      className="hover:font-bold"
+                      accessKey="community"
+                      onClick={handleRedirect}
+                    >
                       Comunidad
                     </Link>
                   </li>
@@ -93,7 +112,12 @@ export const Footer = () => {
                     </Link>
                   </li>
                   <li className="md:border-r md:border-solid md:border-r-white px-2 xsm:max-md:pb-3">
-                    <Link href="/#contact" className="hover:font-bold">
+                    <Link
+                      href="/#contact"
+                      className="hover:font-bold"
+                      accessKey="#contact"
+                      onClick={handleRedirect}
+                    >
                       Contacto
                     </Link>
                   </li>
@@ -161,7 +185,7 @@ export const Footer = () => {
             </div>
           </div>
           <div className="pt-3 px-0 pb-4 hidden xsm:max-md:block xsm:max-md:pt-4 ">
-            <Link href="/#top">
+            <Link href="/#top" onClick={handleRedirect}>
               <Image
                 width={60}
                 height={"auto"}

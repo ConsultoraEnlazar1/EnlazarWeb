@@ -1,7 +1,7 @@
 import supabase from "@/lib/supabaseClient";
 import Image from "next/image";
 import closeIcon from "public/images/x-cerrar.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
 
@@ -50,6 +50,17 @@ const ConsultationForm = ({ handleCloseForm, section, title, setTitle }) => {
     consultation: "",
   });
 
+  let [pathname, setPathname] = useState("");
+
+  useEffect(() => {
+    const path = localStorage.getItem("pathname");
+    if (path) {
+      setPathname("https://enlazar-web.vercel.app/" + path);
+    } else {
+      setPathname("https://enlazar-web.vercel.app/");
+    }
+  }, [pathname]);
+
   const handleInputChange = (e) => {
     e.preventDefault();
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -59,7 +70,7 @@ const ConsultationForm = ({ handleCloseForm, section, title, setTitle }) => {
 
   const handleSubmit = async (e) => {
     //en esta funcion se ejecuta el aviso y se envia la informacion a la base de datos y al mail
-    const { data, error } = await supabase.from("Consultas").insert([
+    const { data, error } = await supabase.from("consultas").insert([
       {
         title: title,
         name: input.name,
@@ -164,11 +175,7 @@ const ConsultationForm = ({ handleCloseForm, section, title, setTitle }) => {
                     name="_subject"
                     value={`${section}: ${title}`}
                   />
-                  <input
-                    type="hidden"
-                    name="_next"
-                    value={window.location.href}
-                  />
+                  <input type="hidden" name="_next" value={pathname} />
                   <input type="hidden" name="_template" value="box" />
                   <input type="hidden" name="_captcha" value="false" />
                   <input
