@@ -46,9 +46,9 @@ const WorkWithUsForm = ({
   useEffect(() => {
     const path = localStorage.getItem("pathname");
     if (path) {
-      setPathname("https://enlazar-web.vercel.app/" + path);
+      setPathname("https://www.consultoraenlazar.xyz/" + path);
     } else {
-      setPathname("https://enlazar-web.vercel.app/");
+      setPathname("https://www.consultoraenlazar.xyz/");
     }
     if (!uploadOpt) setErrors((prev) => ({ ...prev, attachment: "" }));
   }, [pathname]);
