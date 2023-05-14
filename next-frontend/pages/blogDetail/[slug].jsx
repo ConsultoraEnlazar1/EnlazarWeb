@@ -83,8 +83,8 @@ const BlogDetail = ({ blogDetail }) => {
       >
         <BsArrowBarLeft className="w-7 h-auto" /> Blog
       </Link>
-      <article className="bg-white p-6 w-full h-auto flex flex-col justify-center items-center">
-        <div className="flex justify-between flex-wrap flex-col w-full md:w-1/2 ">
+      <article className="bg-white pt-6 w-full h-auto flex flex-col justify-center items-center">
+        <div className="flex justify-between flex-wrap flex-col w-full md:w-1/2 pb-16">
           <h1
             className="font-medium text-center"
             style={{
@@ -97,7 +97,7 @@ const BlogDetail = ({ blogDetail }) => {
           </h1>
           <hr />
           <div
-            className="pt-2 text-justify"
+            className="pt-2 text-justify "
             style={{
               fontSize: "clamp(1rem, 0.9752rem + 0.1322vw, 1.1rem)",
             }}

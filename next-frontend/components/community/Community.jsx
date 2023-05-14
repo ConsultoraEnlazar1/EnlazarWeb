@@ -32,12 +32,14 @@ const Community = () => {
           alt="Header"
           className="xsm:hidden md:block object-cover h-full w-full"
           quality={100}
+          priority={true}
         />
         <Image
           src={BackgroundMobile}
           alt="Header"
           className="xsm:block md:hidden object-cover w-full"
           quality={100}
+          priority={true}
         />
         <div className="absolute left-0 right-0 bottom-0 top-0 xsm:h-[225px] md:h-[600px] lg:h-[490px]">
           <div className="flex w-full h-full justify-center items-center">
