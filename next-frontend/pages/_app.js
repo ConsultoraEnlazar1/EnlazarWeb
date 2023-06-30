@@ -49,7 +49,7 @@ export default function App({ Component, pageProps }) {
           />
         ) : null}
 
-        <CookieConsent
+       {/*  <CookieConsent
           location="bottom"
           buttonText="Sí, utilizar cookies"
           cookieName="CookieConsent"
@@ -97,7 +97,7 @@ export default function App({ Component, pageProps }) {
           >
             <strong>Política de Protección de Datos</strong>
           </Link>
-        </CookieConsent>
+        </CookieConsent> */}
       </SessionContextProvider>
     </>
   );
