@@ -151,7 +151,7 @@ export const Navbar = () => {
                 objectFit: "scale-down",
               }}
               loading="eager"
-              alt="Consultora Enlazar Logo"
+              alt="Consultora Enlazar"
             />
           </Link>
           <div className="xl:hidden flex justify-end">
