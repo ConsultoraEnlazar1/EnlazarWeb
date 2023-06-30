@@ -49,7 +49,7 @@ export default function Document() {
             gtag('js', new Date()); gtag('config', googleAnalyticsId);`,
           }}
         />
-        */}
+
         <script
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || []; function gtag()
