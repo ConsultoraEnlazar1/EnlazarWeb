@@ -7,13 +7,16 @@ import ConsultationForm from "../forms/ConsultationForm";
 import { useState } from "react";
 
 export const LearnWithUs = ({ courses, benefits }) => {
-  const benefitsWithUrl = benefits.filter((item) => item.link);
-  const benefitsWithoutUrl = benefits.filter((item) => !item.link);
+  const benefitsWithUrl = benefits
+    .filter((item) => item.link)
+    .sort((a, b) => a.order - b.order);
+  const benefitsWithoutUrl = benefits
+    .filter((item) => !item.link)
+    .sort((a, b) => a.order - b.order);
   //Form component functions
   const [openForm, setOpenForm] = useState(false);
   const [section, setSection] = useState("");
   const [title, setTitle] = useState("");
-
   const handleOpenForm = (e) => {
     e.preventDefault();
     setTitle(e.target.title);

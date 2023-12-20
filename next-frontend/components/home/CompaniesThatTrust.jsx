@@ -17,7 +17,7 @@ export const CompaniesThatTrust = ({ companies }) => {
               key={_id}
               className="flex justify-center items-center md:grayscale md:hover:grayscale-0 transition-all ease-in-out duration-300"
               style={{
-                width: "clamp(7.5rem, 5.4855rem + 10.7438vw, 15.625rem)",
+                width: "clamp(7rem, 5.2645rem + 9.2562vw, 14rem)",
               }}
             >
               <Image
