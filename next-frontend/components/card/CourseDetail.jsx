@@ -78,11 +78,7 @@ export default function Details({
 }) {
   const handleSubscribe = (e) => {
     e.preventDefault();
-    if (!session) {
-      return toast.info(
-        "¡Nos alegra que quieras formar parte! Por favor inicia sesión para continuar."
-      );
-    } else if (session && !course.inscriptionLink) {
+    if (!course.inscriptionLink) {
       return toast.info(
         "La inscripción estará disponible próximamente. Si tienes dudas realiza una consulta o contáctanos a través de nuestras redes sociales."
       );
@@ -189,7 +185,7 @@ export default function Details({
             </div>
 
             <div className="bg-white border-t rounded-b-lg px-4 py-1 sm:px-6 sm:flex sm:flex-row-reverse">
-              {session && course.inscriptionLink ? (
+              {course.inscriptionLink ? (
                 <Link href={course.inscriptionLink} target="_blank">
                   <button
                     type="button"
@@ -198,14 +194,6 @@ export default function Details({
                     Inscribirse
                   </button>
                 </Link>
-              ) : session && !course.inscriptionLink ? (
-                <button
-                  type="button"
-                  className="w-full inline-flex justify-center items-center border border-transparent shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 h-8 text-sm sm:ml-3 sm:w-auto sm:text-base bg-yellow rounded-2xl py-1 px-8 font-bold uppercase my-1"
-                  onClick={handleSubscribe}
-                >
-                  Inscribirse
-                </button>
               ) : (
                 <button
                   type="button"
