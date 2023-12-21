@@ -39,7 +39,8 @@ export async function getStaticProps() {
       title,
       mainImage,
       description, 
-      link
+      link,
+      order
     }`
   );
 

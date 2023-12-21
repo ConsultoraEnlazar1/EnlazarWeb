@@ -7,8 +7,6 @@ import { getClient } from "@/lib/sanity.server";
 import groq from "groq";
 
 const Blog = ({ blogs }) => {
-  const session = useSession();
-
   useEffect(() => {
     localStorage.setItem("pathname", "blog");
   }, []);
@@ -16,7 +14,7 @@ const Blog = ({ blogs }) => {
   return (
     <>
       <Layout title={"Blog"} content={"Consultora Enlazar."}>
-        {session ? <Blogs blogs={blogs} /> : <SignIn />}
+        <Blogs blogs={blogs} />
       </Layout>
     </>
   );
