@@ -66,65 +66,68 @@ export const Footer = () => {
               </div>
               <div className="flex flex-row justify-center items-center m-0 list-none w-full md:max-sm:pt-12 xsm:max-xl:flex-col">
                 <ul className="flex flex-row border-r-0 justify-center items-center self-center no-underline text-white list-none xsm:max-md:flex-col py-2 px-2 xsm:max-md:p-0 ">
-                  <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
+                  <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-2">
                     <Link
                       href="/team#top"
-                      className="hover:font-bold"
+                      className="hover:font-bold transition-all"
                       accessKey="team"
                       onClick={handleRedirect}
                     >
                       Equipo
                     </Link>
                   </li>
-                  <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
+                  <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-2">
                     <Link
                       href="/services#top"
-                      className="hover:font-bold"
+                      className="hover:font-bold transition-all"
                       accessKey="services"
                       onClick={handleRedirect}
                     >
                       Servicios
                     </Link>
                   </li>
-                  <li className="md:border-r md:border-solid md:border-r-white pl-2 pr-2 xsm:max-md:pb-3">
+                  <li className="md:border-r md:border-solid md:border-r-white pl-2 pr-2 xsm:max-md:pb-2">
                     <Link
                       href="/courses#top"
-                      className="hover:font-bold whitespace-nowrap"
+                      className="hover:font-bold whitespace-nowrap transition-all"
                       accessKey="courses"
                       onClick={handleRedirect}
                     >
                       Cursos & Capacitaciones
                     </Link>
                   </li>
-                  <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
+                  <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-2">
                     <Link
                       href="/community#top"
-                      className="hover:font-bold"
+                      className="hover:font-bold transition-all"
                       accessKey="community"
                       onClick={handleRedirect}
                     >
                       Comunidad
                     </Link>
                   </li>
-                  <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
-                    <Link href="/blog#top" className="hover:font-bold">
+                  <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-2">
+                    <Link
+                      href="/blog#top"
+                      className="hover:font-bold transition-all"
+                    >
                       Blog
                     </Link>
                   </li>
-                  <li className="md:border-r md:border-solid md:border-r-white px-2 xsm:max-md:pb-3">
+                  <li className="md:border-r md:border-solid md:border-r-white px-2 xsm:max-md:pb-2">
                     <Link
                       href="/#contact"
-                      className="hover:font-bold"
+                      className="hover:font-bold transition-all"
                       accessKey="#contact"
                       onClick={handleRedirect}
                     >
                       Contacto
                     </Link>
                   </li>
-                  <li className=" px-2 py-0 xsm:max-md:pb-3">
+                  <li className=" px-2 py-0 xsm:max-md:pb-2">
                     <button
                       onClick={handleClickOpen}
-                      className="hover:font-bold whitespace-nowrap"
+                      className="hover:font-bold whitespace-nowrap transition-all"
                     >
                       Politica de Privacidad
                     </button>
@@ -133,9 +136,28 @@ export const Footer = () => {
               </div>
             </div>
           </div>
+          <div className="m-3 p-0 border border-white w-[10%] block md:hidden"></div>
+          <div className="flex flex-row xsm:max-xl:flex-col justify-center items-center xsm:max-sm:w-full ">
+            <div className="flex flex-row justify-center items-center ">
+              <div className="flex flex-row justify-center items-center m-0 list-none w-full md:max-sm:pt-12 xsm:max-xl:flex-col">
+                <ul className="flex flex-row border-r-0 justify-center items-center self-center no-underline text-white list-none xsm:max-md:flex-col py-2 px-2 xsm:max-md:p-0 md:mb-4">
+                  <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:py-2">
+                    hola@enlazar.xyz
+                  </li>
+                  <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-2">
+                    academia@enlazar.xyz
+                  </li>
+                  <li className="px-2 py-0 xsm:max-md:pb-2">
+                    consultora@enlazar.xyz
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <hr />
           <div className="flex flex-row justify-center items-center m-0 xsm:max-sm:w-full">
             <div className="flex flex-row justify-center items-center list-none text-white mb-0 ">
-              <ul className="flex flex-row justify-center items-center no-underline text-white py-2 pr-0 xsm:max-sm:py-2 xsm:max-sm:px-0 ">
+              <ul className="flex flex-row justify-center items-center no-underline text-white py-3 pr-0 xsm:max-sm:py-3 xsm:max-sm:px-0 ">
                 <li className="hover:scale-y-105 hover:scale-x-105 py-0 px-[0.6rem]">
                   <Link
                     href="https://www.instagram.com/enlazar.ok/"
@@ -184,16 +206,17 @@ export const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="pt-3 px-0 pb-4 hidden xsm:max-md:block xsm:max-md:pt-4 ">
-            <Link href="/#top" onClick={handleRedirect}>
-              <Image
-                width={60}
-                height={"auto"}
-                src={logo}
-                alt="Logo Consultora Enlazar"
-              />
-            </Link>
-          </div>
+        </div>
+        <hr />
+        <div className="pt-3 px-0 pb-4 hidden xsm:max-md:block xsm:max-md:pt-4 ">
+          <Link href="/#top" onClick={handleRedirect}>
+            <Image
+              width={60}
+              height={"auto"}
+              src={logo}
+              alt="Logo Consultora Enlazar"
+            />
+          </Link>
         </div>
         <address className="mb-0 text-center text-white font-light not-italic pb-4 xsm:max-sm:pb-14">
           Buenos Aires, Argentina

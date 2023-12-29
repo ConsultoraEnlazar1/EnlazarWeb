@@ -86,11 +86,9 @@ export const OurServices = ({ services }) => {
           />
           <div
             className=" text-white font-bold w-auto  text-center  drop-shadow-[(4px 4px 10px rgba(0, 0, 0, 0.25))]  absolute"
-            style={{ fontSize: "clamp(1rem, 0.7025rem + 1.5868vw, 2.2rem)" }}
+            style={{ fontSize: "clamp(1rem, 0.5041rem + 2.6446vw, 3rem)" }}
           >
-            Servicios personalizados de calidad
-            <br />
-            con profesionalismo garantizado.
+            Servicios y consultoría
           </div>
         </div>
 
