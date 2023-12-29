@@ -58,7 +58,7 @@ export const Blogs = ({ blogs }) => {
             </div>
           ))
         ) : (
-          <div className="flex flex-col justify-center items-center w-1/2 h-auto text-2xl">
+          <div className="flex flex-col justify-center items-center w-1/2 h-auto text-2xl gap-8">
             <p>No hay blogs publicados actualmente.</p>
             <Link href="/" className="py-2">
               <button className="border-solid border-2 bg-darkBlue text-white rounded-full py-2 px-5 self-center md:self-end">
