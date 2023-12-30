@@ -140,7 +140,7 @@ export const Navbar = () => {
 
   return (
     <nav className="w-full bg-white text-dark shadow font-Noah fixed h-28 z-50">
-      <div className="mx-6 justify-between xl:mx-auto xl:max-w-7xl xl:items-center xl:flex xl:px-6 mt-4">
+      <div className="mx-6 justify-between xl:mx-auto xl:max-w-7xl xl:items-center xl:flex xl:px-3 mt-4">
         <div className="flex items-center justify-between py-3 xl:py-5 xl:block">
           <Link href="/#top" onClick={handleRedirect}>
             <Image
@@ -193,12 +193,12 @@ export const Navbar = () => {
         </div>
 
         <div
-          className={`flex-1 justify-center xl:flex items-center w-full h-3/4 p-2 ${
+          className={`flex-1 justify-center xl:flex items-center w-full h-3/4 py-2 px-4 ${
             navbar ? "flex" : "hidden"
           }`}
         >
-          <ul className="flex flex-col justify-center items-center p-2 w-full h-3/4 space-y-4 opacity-95 xl:flex-row xl:h-full xl:w-auto xl:space-x-6 xl:space-y-0 xl:p-0 xl:pt-2 xl:opacity-100 bg-white">
-            <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-base">
+          <ul className="flex flex-col justify-center items-center p-2 w-full h-3/4 space-y-4 opacity-95 xl:flex-row xl:h-full xl:w-auto xl:space-x-6 xl:space-y-0 xl:p-0 xl:pt-2 xl:opacity-100 bg-white ">
+            <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-[1.1rem] md:text-base">
               <Link
                 className="flex flex-1 w-full justify-center self-center"
                 href="/team#top"
@@ -208,17 +208,17 @@ export const Navbar = () => {
                 Equipo
               </Link>
             </li>
-            <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-base">
+            <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-[1.1rem] md:text-base whitespace-nowrap">
               <Link
                 className="flex flex-1 w-full justify-center self-center"
                 href="/services#top"
                 accessKey="services"
                 onClick={handleRedirect}
               >
-                Servicios
+                Servicios & Consultoría
               </Link>
             </li>
-            <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-base whitespace-nowrap">
+            <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-[1.1rem] md:text-base whitespace-nowrap">
               <Link
                 className="flex flex-1 w-full justify-center self-center"
                 href="/courses#top"
@@ -228,7 +228,7 @@ export const Navbar = () => {
                 Cursos & Capacitaciones
               </Link>
             </li>
-            <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-base">
+            <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-[1.1rem] md:text-base">
               <Link
                 className="flex flex-1 w-full justify-center self-center"
                 href="/community#top"
@@ -238,7 +238,7 @@ export const Navbar = () => {
                 Comunidad
               </Link>
             </li>
-            <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-base">
+            <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-[1.1rem] md:text-base">
               <Link
                 className="flex flex-1 w-full justify-center self-center"
                 href="/blog#top"
@@ -246,7 +246,7 @@ export const Navbar = () => {
                 Blog
               </Link>
             </li>
-            <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-base">
+            <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-[1.1rem] md:text-base">
               <Link
                 className="flex flex-1 w-full justify-center self-center"
                 href="/#contact"
