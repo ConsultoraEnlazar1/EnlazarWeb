@@ -36,13 +36,13 @@ const WorkWithUs = () => {
           <h2 className="text-3xl font-bold text-ellipsis opacity-90 xsm:py-6 lg:py-2 lg:text-left text-darkBlue whitespace-nowrap">
             ¡Trabajá con nosotros!
           </h2>
-          <p className="text-dark lg:pb-6 xsm:pb-6 xsm:w-9/12 lg:w-full md:text-3xl lg:text-sm md:pt-12 lg:pt-6">
+          <p className="text-dark lg:pb-6 xsm:pb-6 xsm:w-9/12 lg:w-full text-base lg:text-sm md:pt-12 lg:pt-6">
             Constantemente estamos ampliando nuestra red de profesionales. Si te
             sentís identificado/a con nuestra organización, podés dejarnos tu CV
             y lo tendremos en cuenta para futuras búsquedas.
           </p>
           <button
-            className="bg-yellow rounded-full m-4 p-3 md:px-8 lg:py-2 lg:px-10 font-semibold uppercase xsm:self-center lg:self-start text-dark xsm:px-8 text-xl lg:text-sm"
+            className="bg-yellow rounded-full m-4 p-3 md:px-8 lg:py-2 lg:px-10 font-semibold uppercase xsm:self-center lg:self-start text-dark xsm:px-8 text-base lg:text-sm"
             onClick={handleOpenCv}
           >
             Cargar mi CV
