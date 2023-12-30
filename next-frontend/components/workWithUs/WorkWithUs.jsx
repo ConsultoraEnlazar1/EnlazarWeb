@@ -36,7 +36,7 @@ const WorkWithUs = () => {
           <h2 className="text-3xl font-bold text-ellipsis opacity-90 xsm:py-6 lg:py-2 lg:text-left text-darkBlue whitespace-nowrap">
             ¡Trabajá con nosotros!
           </h2>
-          <p className="text-dark lg:pb-6 xsm:pb-6 xsm:w-9/12 lg:w-full text-base lg:text-sm md:pt-12 lg:pt-6">
+          <p className="text-dark pb-6 xsm:w-9/12 lg:w-full text-base lg:pt-6">
             Constantemente estamos ampliando nuestra red de profesionales. Si te
             sentís identificado/a con nuestra organización, podés dejarnos tu CV
             y lo tendremos en cuenta para futuras búsquedas.
