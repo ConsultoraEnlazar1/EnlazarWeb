@@ -2,8 +2,22 @@ import useViewportWidth from "@/lib/hooks/useViewportWidth";
 import { urlFor } from "@/lib/sanity";
 import Image from "next/image";
 
-const MemberCard = ({ name, image, jobFirstLine, jobSecondLine }) => {
+const MemberCard = ({
+  name,
+  image,
+  jobFirstLine,
+  jobSecondLine,
+  jobMobileLine,
+}) => {
   const viewport = useViewportWidth();
+  console.log(
+    name,
+    image,
+    jobFirstLine,
+    jobSecondLine,
+    jobMobileLine,
+    viewport
+  );
   return (
     <div className="box-border py-4 px-2 w-auto sm:w-56 text-white flex flex-col justify-start items-center">
       <Image
@@ -15,11 +29,16 @@ const MemberCard = ({ name, image, jobFirstLine, jobSecondLine }) => {
       ></Image>
       <p className="text-center font-bold pt-4">{name}</p>
       <p className="text-center w-32 sm:w-auto">
-        {jobFirstLine.toLowerCase().includes("full stack") && viewport <= 640
-          ? `${jobFirstLine} Dev.`
-          : jobFirstLine}
+        {!jobMobileLine?.length && viewport <= 640
+          ? jobFirstLine
+          : viewport > 640
+          ? jobFirstLine
+          : null}
       </p>
       <p className="text-center hidden sm:block">{jobSecondLine}</p>
+      <p className="text-center block sm:hidden w-32">
+        {jobMobileLine?.length && jobMobileLine}
+      </p>
     </div>
   );
 };

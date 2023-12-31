@@ -4,6 +4,7 @@ import Skeleton from "@mui/material/Skeleton";
 import Box from "@mui/material/Box";
 
 const TeamCards = (props) => {
+  console.log(props.team);
   const [team, setTeam] = React.useState();
   React.useEffect(() => {
     setTeam(props.team.sort(() => Math.random() - 0.5));
@@ -36,6 +37,7 @@ const TeamCards = (props) => {
                     name={member.name}
                     jobFirstLine={member.jobFirstLine}
                     jobSecondLine={member.jobSecondLine}
+                    jobMobileLine={member.jobMobileLine}
                   ></MemberCard>
                 ))}
           </div>
