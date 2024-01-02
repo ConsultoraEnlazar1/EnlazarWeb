@@ -4,7 +4,6 @@ import Skeleton from "@mui/material/Skeleton";
 import Box from "@mui/material/Box";
 
 const TeamCards = (props) => {
-  console.log(props.team);
   const [team, setTeam] = React.useState();
   React.useEffect(() => {
     setTeam(props.team.sort(() => Math.random() - 0.5));

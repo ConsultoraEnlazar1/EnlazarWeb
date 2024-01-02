@@ -10,14 +10,7 @@ const MemberCard = ({
   jobMobileLine,
 }) => {
   const viewport = useViewportWidth();
-  console.log(
-    name,
-    image,
-    jobFirstLine,
-    jobSecondLine,
-    jobMobileLine,
-    viewport
-  );
+
   return (
     <div className="box-border py-4 px-2 w-auto sm:w-56 text-white flex flex-col justify-start items-center">
       <Image
