@@ -27,5 +27,11 @@ export default {
       title: 'Puesto/Cargo. Linea 2',
       validation: (Rule) => Rule.max(30),
     },
+    {
+      name: 'jobMobileLine',
+      type: 'string',
+      title: 'Puesto/Cargo. Texto responsivo para pantallas mobile',
+      validation: (Rule) => Rule.max(50),
+    },
   ],
 }

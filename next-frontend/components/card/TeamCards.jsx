@@ -10,15 +10,15 @@ const TeamCards = (props) => {
   }, []);
   return (
     <div className="bg-blue flex justify-center">
-      <div className="flex flex-wrap w-9/12 sm:justify-center lg:justify-start lg:py-12">
-        <div className="lg:pb-20 flex self-start">
-          <h3 className="py-12 text-2xl xsm:text-lg md:text-2xl font-semibold text-left text-ellipsis opacity-90 text-yellow">
+      <div className="flex flex-wrap w-full sm:justify-center lg:justify-start lg:py-12">
+        <div className="lg:pb-5 flex self-start justify-center w-screen ml-4 sm:ml-12 sm:w-[90%] lg:w-3/4">
+          <h3 className="py-12 text-[1.4rem] min-[790px]:max-lg:w-full  w-3/4  md:text-2xl font-semibold text-left text-ellipsis opacity-90 text-yellow">
             Detrás de todo gran proyecto hay grandes personas y profesionales.
             <br></br>Queremos que conozcas a nuestro gran equipo.
           </h3>
         </div>
-        <div className="flex justify-center w-screen">
-          <div className="flex flex-wrap gap-5 pb-12 justify-center w-auto">
+        <div className="flex justify-center w-screen m-2 sm:w-[90%] md:m-auto lg:w-3/4 ">
+          <div className="flex flex-wrap gap-3 md:gap-5 lg:gap-8 pb-8 justify-center w-auto">
             {!team
               ? Array.from(new Array(6)).map((item, index) => (
                   <Box key={index} sx={{ width: 210, marginRight: 0.5, my: 5 }}>
@@ -36,6 +36,7 @@ const TeamCards = (props) => {
                     name={member.name}
                     jobFirstLine={member.jobFirstLine}
                     jobSecondLine={member.jobSecondLine}
+                    jobMobileLine={member.jobMobileLine}
                   ></MemberCard>
                 ))}
           </div>
