@@ -64,8 +64,14 @@ export const LearnWithUs = ({ courses, benefits }) => {
               />
             ))}
 
-          <div className="flex justify-center items-center w-full py-4">
-            <p className="font-semibold text-center text-xl w-2/4 text-ellipsis lg:w-1/4">
+          <div className="flex justify-center items-center w-full pt-4">
+            <p className="font-semibold text-center text-xl sm:w-3/4 md:w-2/4 text-ellipsis">
+              Consultá más sobre los próximos cursos de Recursos humanos,
+              habilidades blandas y desarrollo profesional.
+            </p>
+          </div>
+          <div className="flex justify-center items-center w-full pb-4">
+            <p className="font-semibold text-center text-xl sm:w-3/4 md:w-2/4 text-ellipsis">
               Actualizamos el contenido y brindamos más cursos cada año.
             </p>
           </div>
