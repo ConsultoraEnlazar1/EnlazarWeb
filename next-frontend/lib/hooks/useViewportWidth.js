@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const useViewportWidth = () => {
-  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+  const [viewportWidth, setViewportWidth] = useState();
 
   useEffect(() => {
     // Función para actualizar el ancho del viewport cuando la ventana cambia de tamaño
