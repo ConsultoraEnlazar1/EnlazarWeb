@@ -144,7 +144,7 @@ const Community = () => {
       </section>
       <section className="flex flex-col justify-center items-center lg:flex-row lg:justify-center lg:items-center pb-28 md:pb-24 px-10 pt-36">
         <Image
-          className="w-[95%] sm:max-md:max-w-[80%] lg:w-full md:max-w-[45%] lg:max-w-[55%] pb-10 lg:pb-0"
+          className="w-[95%] sm:max-md:max-w-[80%] lg:w-full md:max-w-[45%] lg:max-w-[50%] pb-10 lg:pb-0"
           src={ds}
           alt="Comunidad de Aprendizaje en Discord"
           width="900"
