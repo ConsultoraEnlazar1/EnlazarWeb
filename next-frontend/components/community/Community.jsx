@@ -2,7 +2,7 @@ import Image from "next/image";
 import Background from "@/public/images/portada-comunidad.webp";
 import BackgroundMobile from "@/public/images/portada-comunidad-mobile.webp";
 import Airplane from "@/public/images/avioncito.gif";
-import ds from "@/public/images/dscommunitywl.jpg";
+import ds from "@/public/images/dscommunitynew.jpg";
 import Link from "next/link";
 
 const ChevronsDown = ({ size = 50, color = "#34668b" }) => (
