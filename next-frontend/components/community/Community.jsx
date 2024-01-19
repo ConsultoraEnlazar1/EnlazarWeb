@@ -2,6 +2,7 @@ import Image from "next/image";
 import Background from "@/public/images/portada-comunidad.webp";
 import BackgroundMobile from "@/public/images/portada-comunidad-mobile.webp";
 import Airplane from "@/public/images/avioncito.gif";
+import ds from "@/public/images/dscommunitywl.jpg";
 import Link from "next/link";
 
 const ChevronsDown = ({ size = 50, color = "#34668b" }) => (
@@ -54,7 +55,7 @@ const Community = () => {
       </section>
       <section
         id="services"
-        className="flex flex-col xsm:pb-28 md:pb-24 lg:h-[700px]"
+        className="flex flex-col h-auto md:h-full md:max-h-[700px]"
       >
         <div className="flex justify-center pt-5">
           <Link
@@ -67,7 +68,7 @@ const Community = () => {
         <h3 className="text-2xl md:text-3xl font-semibold text-left text-ellipsis opacity-90 text-black pt-5 md:pb-0 lg:pb-14 xsm:pl-4 md:pl-12">
           Encontrarás
         </h3>
-        <div className="xsm:grid xsm:grid-cols-3 md:grid lg:flex md:justify-items-center lg:flex-wrap justify-center xsm:pb-10 md:pb-24 xsm:px-2 xsm:pt-12">
+        <div className="xsm:grid xsm:grid-cols-3 md:grid lg:flex md:justify-items-center lg:flex-wrap justify-center pb-16 xsm:px-2 xsm:pt-12">
           <div className="flex flex-col items-center md:h-[160px] md:w-[210px]">
             <Image
               src="/images/icono-tips-consejos.svg"
@@ -139,6 +140,25 @@ const Community = () => {
               Ir ahora
             </button>
           </Link>
+        </div>
+      </section>
+      <section className="flex flex-col justify-center items-center lg:flex-row lg:justify-center lg:items-center pb-28 md:pb-24 px-10 pt-36">
+        <Image
+          className="w-[95%] sm:max-md:max-w-[80%] lg:w-full md:max-w-[45%] lg:max-w-[55%] pb-10 lg:pb-0"
+          src={ds}
+          alt="Comunidad de Aprendizaje en Discord"
+          width="900"
+          height="900"
+        />
+        <div className="lg:w-2/5 flex flex-col justify-center items-center lg:items-start">
+          <p className="text-xl font-[500] text-center text-ellipsis opacity-90 text-black">
+            Toda la comunidad de estudiantes y profesionales de Enlazar tiene
+            acceso a la comunidad de aprendizaje de Discord, donde nos
+            mantenemos actualizados sobre cada capacitación y el mundo laboral,
+            compartimos ofertas de empleo exclusivas y fomentamos el networking
+            y las mejores prácticas del área. <br />
+            ¡Te esperamos!
+          </p>
         </div>
       </section>
       <section id="telegram" className="relative bg-grey">
