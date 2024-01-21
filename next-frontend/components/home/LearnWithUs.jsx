@@ -42,19 +42,29 @@ export const LearnWithUs = ({ courses, benefits }) => {
       ) : null}
 
       <div className="bg-white w-full h-auto lg:min-h-screen flex flex-col justify-center items-center text-dark">
-        <div className="flex justify-center items-center w-full h-auto pb-6 bg-grey">
+        <div className="flex justify-center items-center w-full  h-auto pb-6 bg-grey flex-col">
           <h2
-            className="pt-16 px-4 md:px-8 font-bold text-center text-ellipsis "
+            className="pt-16 px-4 md:px-8 font-bold text-center text-ellipsis sm:w-[80%] lg:w-[40%] "
             style={{
               fontSize: "clamp(1.2rem, 1.0264rem + 0.9256vw, 1.9rem)",
-              width: "clamp(28.125rem, 24.251rem + 20.6612vw, 43.75rem)",
+              // width: "clamp(28.125rem, 24.251rem + 20.6612vw, 43.75rem)",
             }}
           >
             Te contamos más sobre toda nuestra propuesta formativa en Recursos
             Humanos.
           </h2>
         </div>
-        <section className="flex flex-col flex-wrap justify-center items-center h-auto gap-6 px-6 py-8 w-full lg:relative lg:flex-row lg:justify-center lg:items-center lg:px-4 lg:py-10 bg-grey">
+        <section className="flex flex-col flex-wrap justify-center items-center h-auto gap-6 px-6 py-6 w-full lg:relative lg:flex-row lg:justify-evenly lg:items-center lg:px-4 lg:py-10 bg-grey">
+          <div className="relative max-w-md w-[90%] md:w-[45%] h-auto flex justify-center items-center pb-4">
+            <p className="font-[500] text-center text-lg md:text-xl text-ellipsis">
+              Todos nuestros cursos incluyen material de estudio complementario,
+              clases sincrónicas y asincrónicas, certificado de aprobación al
+              completar el curso, actividades prácticas para asimilar el
+              conocimiento y una comunidad de aprendizaje para seguir
+              conectados, resolver dudas y hacer networking.
+            </p>
+          </div>
+
           {courses &&
             courses.map((course) => (
               <CourseCard
