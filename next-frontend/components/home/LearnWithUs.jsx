@@ -54,8 +54,8 @@ export const LearnWithUs = ({ courses, benefits }) => {
             Humanos.
           </h2>
         </div>
-        <section className="flex flex-col flex-wrap justify-center items-center h-auto gap-6 px-6 py-6 w-full lg:relative lg:flex-row lg:justify-evenly lg:items-center lg:px-4 lg:py-10 bg-grey">
-          <div className="relative max-w-md w-[90%] md:w-[45%] h-auto flex justify-center items-center pb-4">
+        <section className="flex flex-col flex-wrap justify-center items-center h-auto gap-6 px-6 py-6 w-full lg:relative lg:flex-row lg:justify-center lg:items-center lg:px-4 lg:py-10 bg-grey">
+          {/* <div className="relative max-w-md w-[90%] md:w-[45%] h-auto flex justify-center items-center pb-4">
             <p className="font-[500] text-center text-lg md:text-xl text-ellipsis">
               Todos nuestros cursos incluyen material de estudio complementario,
               clases sincrónicas y asincrónicas, certificado de aprobación al
@@ -63,7 +63,7 @@ export const LearnWithUs = ({ courses, benefits }) => {
               conocimiento y una comunidad de aprendizaje para seguir
               conectados, resolver dudas y hacer networking.
             </p>
-          </div>
+          </div> */}
 
           {courses &&
             courses.map((course) => (
