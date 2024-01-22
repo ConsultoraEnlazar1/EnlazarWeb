@@ -50,8 +50,9 @@ export const Feedback = () => {
     if (isInView) {
       const controls = animate(0, 15, {
         duration: 2.5, // Duración de la animación en segundos
+        onRepeat: false,
         onUpdate: (latest) => {
-          setCounter(Math.round(latest)); // Actualizar el estado con el último valor
+          if (!counter) setCounter(Math.round(latest)); // Actualizar el estado con el último valor
         },
       });
 
@@ -62,9 +63,10 @@ export const Feedback = () => {
   useEffect(() => {
     if (isInView2) {
       const controls = animate(0, 2000, {
-        duration: 2.5, // Duración de la animación en segundos
+        duration: 2.5,
+        onRepeat: false, // Duración de la animación en segundos
         onUpdate: (latest) => {
-          setCounter2(Math.round(latest)); // Actualizar el estado con el último valor
+          if (!counter2) setCounter2(Math.round(latest)); // Actualizar el estado con el último valor
         },
       });
 
@@ -74,9 +76,10 @@ export const Feedback = () => {
   useEffect(() => {
     if (isInView3) {
       const controls = animate(0, 10, {
-        duration: 2.5, // Duración de la animación en segundos
+        duration: 2.5,
+        onRepeat: false, // Duración de la animación en segundos
         onUpdate: (latest) => {
-          setCounter3(Math.round(latest)); // Actualizar el estado con el último valor
+          if (!counter3) setCounter3(Math.round(latest)); // Actualizar el estado con el último valor
         },
       });
 
@@ -86,9 +89,10 @@ export const Feedback = () => {
   useEffect(() => {
     if (isInView4) {
       const controls = animate(0, 900, {
-        duration: 2.5, // Duración de la animación en segundos
+        duration: 2.5,
+        onRepeat: false, // Duración de la animación en segundos
         onUpdate: (latest) => {
-          setCounter4(Math.round(latest)); // Actualizar el estado con el último valor
+          if (!counter4) setCounter4(Math.round(latest)); // Actualizar el estado con el último valor
         },
       });
 
@@ -98,9 +102,10 @@ export const Feedback = () => {
   useEffect(() => {
     if (isInView5) {
       const controls = animate(0, 5, {
-        duration: 2.5, // Duración de la animación en segundos
+        duration: 2.5,
+        onRepeat: false, // Duración de la animación en segundos
         onUpdate: (latest) => {
-          setCounter5(Math.round(latest)); // Actualizar el estado con el último valor
+          if (!counter5) setCounter5(Math.round(latest)); // Actualizar el estado con el último valor
         },
       });
 
@@ -109,10 +114,10 @@ export const Feedback = () => {
   }, [isInView5]);
   useEffect(() => {
     if (isInView6) {
-      const controls = animate(0, 90000, {
+      const controls = animate(0, 90, {
         duration: 2.5, // Duración de la animación en segundos
         onUpdate: (latest) => {
-          setCounter6(Math.round(latest)); // Actualizar el estado con el último valor
+          if (!counter6) setCounter6(Math.round(latest)); // Actualizar el estado con el último valor
         },
       });
 
@@ -310,7 +315,7 @@ export const Feedback = () => {
               className="text-5xl font-bold m-0 opacity-90 text-yellow drop-shadow-sm"
               style={{ lineHeight: "1.2" }}
             >
-              +{counter6}
+              +{counter6} mil
             </h3>
             <p className="text-lg font-[500] m-0 text-center">
               Seguidores en
