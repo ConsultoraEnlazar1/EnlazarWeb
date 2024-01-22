@@ -62,7 +62,7 @@ export const Feedback = () => {
 
   useEffect(() => {
     if (isInView2) {
-      const controls = animate(0, 2000, {
+      const controls = animate(0, 2, {
         duration: 2.5,
         onRepeat: false, // Duración de la animación en segundos
         onUpdate: (latest) => {
@@ -190,7 +190,7 @@ export const Feedback = () => {
               quality={100}
             />
             <h3 className="text-5xl font-bold m-0 opacity-90 text-yellow drop-shadow-sm">
-              +{counter2}
+              +{counter2} mil
             </h3>
             <p className="text-lg font-[500] m-0 text-center">
               Inscriptos a nuestros
