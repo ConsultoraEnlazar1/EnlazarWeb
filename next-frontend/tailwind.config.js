@@ -35,7 +35,9 @@ module.exports = {
       },
       backgroundImage: {
         // EXAMPLE
-        // hero: "url('/img/hero/hero-bg.png')",
+        courses: "url('/images/mainimage.png')",
+        courses2: "url('/images/mainimage2.png')",
+        courses3: "url('/images/mainimage3.png')",
       },
     },
   },
