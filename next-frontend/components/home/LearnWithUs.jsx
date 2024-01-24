@@ -80,7 +80,7 @@ export const LearnWithUs = ({ courses, benefits }) => {
             Te contamos más sobre toda nuestra propuesta formativa en Recursos
             Humanos.
           </h2>
-          <div className="w-[90%] h-auto flex justify-center items-center pt-6">
+          <div className="w-[90%] h-auto flex justify-center items-center pt-6 pb-6 md:pb-0">
             <p className="font-[500] text-center text-lg md:text-xl text-ellipsis">
               Todos nuestros cursos incluyen material de estudio complementario,
               clases sincrónicas y asincrónicas, certificado de aprobación al
