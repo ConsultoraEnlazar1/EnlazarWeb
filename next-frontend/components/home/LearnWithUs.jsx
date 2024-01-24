@@ -26,22 +26,17 @@ export const LearnWithUs = ({ courses, benefits }) => {
 
   useEffect(() => {
     if (viewport && courses?.length) {
-      console.log("ME LLAMEEE");
-      console.log(
-        courses.sort((elem1, elem2) => elem1.orderDesktop - elem2.orderDesktop),
-        "CURSOSOSSSS"
-      );
       const coursesOrdered = [...courses].sort(
         (a, b) => a.orderDesktop - b.orderDesktop
       );
       const coursesOrderedMiddle = [...courses].sort(
         (a, b) => a.orderMiddleScreen - b.orderMiddleScreen
       );
-      console.log("OERZDSFGSRAHDSF>ZDFHBZXFB", coursesOrdered);
+
       setCoursesMiddleScreen(coursesOrderedMiddle);
     }
   }, [viewport]);
-  console.log(coursesDesktop, "ORDENADOSSSS?????");
+
   const handleOpenForm = (e) => {
     e.preventDefault();
     setTitle(e.target.title);
@@ -54,7 +49,7 @@ export const LearnWithUs = ({ courses, benefits }) => {
     setTitle("");
     setOpenForm(false);
   };
-  console.log(coursesDesktop);
+
   return (
     <>
       {openForm ? (
@@ -88,7 +83,7 @@ export const LearnWithUs = ({ courses, benefits }) => {
             </p>
           </div>
         </div>
-        <div className="w-screen bg-grey flex flex-col justify-center items-center">
+        <div className="w-full bg-grey flex flex-col justify-center items-center">
           <section className="flex flex-col flex-wrap justify-center items-center h-auto gap-6 px-6 py-6 w-full lg:relative lg:flex-row lg:justify-evenly lg:items-center lg:px-4 lg:py-10 bg-grey lg:bg-courses3 bg-top max-w-7xl">
             {viewport && viewport < 1024
               ? courses.map((course) => (
