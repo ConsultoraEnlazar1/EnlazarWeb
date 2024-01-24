@@ -38,9 +38,7 @@ export const LearnWithUs = ({ courses, benefits }) => {
         (a, b) => a.orderMiddleScreen - b.orderMiddleScreen
       );
       console.log("OERZDSFGSRAHDSF>ZDFHBZXFB", coursesOrdered);
-      if (viewport > 1460) {
-        setCoursesDesktop(coursesOrdered);
-      } else setCoursesMiddleScreen(coursesOrderedMiddle);
+      setCoursesMiddleScreen(coursesOrderedMiddle);
     }
   }, [viewport]);
   console.log(coursesDesktop, "ORDENADOSSSS?????");
@@ -80,7 +78,7 @@ export const LearnWithUs = ({ courses, benefits }) => {
             Te contamos más sobre toda nuestra propuesta formativa en Recursos
             Humanos.
           </h2>
-          <div className="w-[90%] h-auto flex justify-center items-center pt-6 pb-6 md:pb-0">
+          <div className="w-[90%] max-w-7xl h-auto flex justify-center items-center pt-6 pb-6 md:pb-0">
             <p className="font-[500] text-center text-lg md:text-xl text-ellipsis">
               Todos nuestros cursos incluyen material de estudio complementario,
               clases sincrónicas y asincrónicas, certificado de aprobación al
@@ -90,46 +88,38 @@ export const LearnWithUs = ({ courses, benefits }) => {
             </p>
           </div>
         </div>
-        <section className="flex flex-col flex-wrap justify-center items-center h-auto gap-6 px-6 py-6 w-full lg:relative lg:flex-row lg:justify-evenly lg:items-center lg:px-4 lg:py-10 bg-grey 2xl:bg-courses lg:bg-courses3 bg-top">
-          {viewport && viewport < 1024
-            ? courses.map((course) => (
-                <CourseCard
-                  key={course._id}
-                  course={course}
-                  handleOpenForm={handleOpenForm}
-                />
-              ))
-            : viewport > 1460
-            ? coursesDesktop.map((course) => (
-                <CourseCard
-                  key={course._id}
-                  course={course}
-                  handleOpenForm={handleOpenForm}
-                />
-              ))
-            : viewport >= 1024 &&
-              viewport <= 1460 &&
-              coursesMiddleScreen &&
-              coursesMiddleScreen.map((course) => (
-                <CourseCard
-                  key={course._id}
-                  course={course}
-                  handleOpenForm={handleOpenForm}
-                />
-              ))}
+        <div className="w-screen bg-grey flex flex-col justify-center items-center">
+          <section className="flex flex-col flex-wrap justify-center items-center h-auto gap-6 px-6 py-6 w-full lg:relative lg:flex-row lg:justify-evenly lg:items-center lg:px-4 lg:py-10 bg-grey lg:bg-courses3 bg-top max-w-7xl">
+            {viewport && viewport < 1024
+              ? courses.map((course) => (
+                  <CourseCard
+                    key={course._id}
+                    course={course}
+                    handleOpenForm={handleOpenForm}
+                  />
+                ))
+              : coursesMiddleScreen &&
+                coursesMiddleScreen.map((course) => (
+                  <CourseCard
+                    key={course._id}
+                    course={course}
+                    handleOpenForm={handleOpenForm}
+                  />
+                ))}
 
-          <div className="flex justify-center items-center w-full pt-4">
-            <p className="font-semibold text-center text-xl sm:w-3/4 md:w-2/4 text-ellipsis">
-              Consultá más sobre los próximos cursos de Recursos humanos,
-              habilidades blandas y desarrollo profesional.
-            </p>
-          </div>
-          <div className="flex justify-center items-center w-full pb-4">
-            <p className="font-semibold text-center text-xl sm:w-3/4 md:w-2/4 text-ellipsis">
-              Actualizamos el contenido y brindamos más cursos cada año.
-            </p>
-          </div>
-        </section>
+            <div className="flex justify-center items-center w-full pt-4">
+              <p className="font-semibold text-center text-xl sm:w-3/4 md:w-2/4 text-ellipsis">
+                Consultá más sobre los próximos cursos de Recursos humanos,
+                habilidades blandas y desarrollo profesional.
+              </p>
+            </div>
+            <div className="flex justify-center items-center w-full pb-4">
+              <p className="font-semibold text-center text-xl sm:w-3/4 md:w-2/4 text-ellipsis">
+                Actualizamos el contenido y brindamos más cursos cada año.
+              </p>
+            </div>
+          </section>
+        </div>
         <section className="flex flex-col justify-center items-center p-6 md:p-12 flex-wrap">
           <h2
             className=" p-10 font-bold text-2xl text-center text-ellipsis md:text-3xl md:pb-12 border-t-2"
