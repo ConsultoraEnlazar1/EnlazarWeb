@@ -19,8 +19,7 @@ const Courses = ({ courses, benefits }) => {
 };
 
 export async function getStaticProps() {
-  const courses = await getClient()
-    .fetch(groq`*[_type == "course"] | order(order asc){
+  const courses = await getClient().fetch(groq`*[_type == "course"]{
     _id,
     order,
     title,
@@ -30,7 +29,9 @@ export async function getStaticProps() {
     "commissions": commissions[]->{_id,commissionName,duration,dates, modality},
       body,
       slug,
-      inscriptionLink
+      inscriptionLink,
+      orderDesktop,
+      orderMiddleScreen
   }`);
 
   const benefits = await getClient().fetch(

@@ -37,7 +37,7 @@ module.exports = {
         // EXAMPLE
         courses: "url('/images/mainimage.png')",
         courses2: "url('/images/mainimage2.png')",
-        courses3: "url('/images/mainimage3.png')",
+        courses3: "url('/images/mainimage8.png')",
       },
     },
   },
