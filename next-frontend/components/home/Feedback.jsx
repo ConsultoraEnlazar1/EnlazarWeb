@@ -252,20 +252,6 @@ export const Feedback = () => {
           </div>
         </motion.div>
 
-        {/* <div className="flex flex-col items-center justify-center text-center md:m-4 mt-4 w-full md:w-auto">
-          <div className="relative w-48 h-48 flex flex-col justify-start items-center gap-2 ">
-            <Image
-              alt="uno"
-              src="/images/logos-empresas/cero.png"
-              width={55}
-              height={55}
-              quality={100}
-            />
-            <h3 className="text-5xl font-bold m-0 opacity-90 text-yellow drop-shadow-sm">+900</h3>
-            <p className="text-lg font-[500] m-0 text-center">Personas en nuestra comunidad.</p>
-          </div>
-        </div> */}
-
         <motion.div
           className="flex flex-col items-center justify-center text-center max-w-fit md:max-w-full md:m-4 mt-4 w-full md:w-auto bg-slate-100 p-4 rounded-3xl outline-offset-8"
           style={{ boxShadow: "20px 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
