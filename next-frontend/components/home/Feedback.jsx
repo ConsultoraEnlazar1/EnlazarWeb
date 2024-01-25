@@ -148,7 +148,7 @@ export const Feedback = () => {
 
       <div className="flex justify-center items-center bg-blue text-dark p-4 md:p-12 flex-wrap gap-4">
         <motion.div
-          className="flex flex-col items-center justify-center text-center max-w-fit md:max-w-full md:m-4 mt-4 w-full md:w-auto bg-slate-100 p-4 rounded-3xl outline-offset-8"
+          className="flex flex-col items-center justify-center text-center max-w-fit md:max-w-full md:m-4 mt-2 w-full md:w-auto bg-slate-100 p-4 rounded-3xl outline-offset-8"
           style={{ boxShadow: "20px 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
           variants={cardVariants}
           initial="offscreen"
@@ -267,7 +267,7 @@ export const Feedback = () => {
         </div> */}
 
         <motion.div
-          className="flex flex-col items-center justify-center text-center max-w-fit md:max-w-full md:m-4 mt-4 mb-6 w-full md:w-auto bg-slate-100 p-4 rounded-3xl outline-offset-8"
+          className="flex flex-col items-center justify-center text-center max-w-fit md:max-w-full md:m-4 mt-4 w-full md:w-auto bg-slate-100 p-4 rounded-3xl outline-offset-8"
           style={{ boxShadow: "20px 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
           variants={cardVariants}
           initial="offscreen"

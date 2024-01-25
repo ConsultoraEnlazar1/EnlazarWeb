@@ -62,7 +62,7 @@ export const LearnWithUs = ({ courses, benefits }) => {
       ) : null}
 
       <div className="bg-white w-full h-auto lg:min-h-screen flex flex-col justify-center items-center text-dark">
-        <div className="flex justify-center items-center w-full h-auto bg-grey flex-col">
+        <div className="flex justify-center items-center w-full h-auto bg-grey flex-col gap-2">
           <h2
             className="pt-16 px-4 md:px-8 font-bold text-center text-ellipsis sm:w-[80%] md:w-[60%] xl:w-[40%] "
             style={{
@@ -83,38 +83,36 @@ export const LearnWithUs = ({ courses, benefits }) => {
             </p>
           </div>
         </div>
-        <div className="w-full bg-grey flex flex-col justify-center items-center">
-          <section className="flex flex-col flex-wrap justify-center items-center h-auto gap-6 px-6 py-6 w-full lg:relative lg:flex-row lg:justify-evenly lg:items-center lg:px-4 lg:py-10 bg-grey lg:bg-courses3 bg-top max-w-7xl">
-            {viewport && viewport < 1024
-              ? courses.map((course) => (
-                  <CourseCard
-                    key={course._id}
-                    course={course}
-                    handleOpenForm={handleOpenForm}
-                  />
-                ))
-              : coursesMiddleScreen &&
-                coursesMiddleScreen.map((course) => (
-                  <CourseCard
-                    key={course._id}
-                    course={course}
-                    handleOpenForm={handleOpenForm}
-                  />
-                ))}
+        <section className="flex flex-col flex-wrap justify-center items-center h-auto gap-6 px-6 py-6 w-full lg:relative lg:flex-row lg:justify-center lg:items-center lg:px-4 lg:py-10 bg-grey">
+          {viewport && viewport < 1024
+            ? courses.map((course) => (
+                <CourseCard
+                  key={course._id}
+                  course={course}
+                  handleOpenForm={handleOpenForm}
+                />
+              ))
+            : coursesMiddleScreen &&
+              coursesMiddleScreen.map((course) => (
+                <CourseCard
+                  key={course._id}
+                  course={course}
+                  handleOpenForm={handleOpenForm}
+                />
+              ))}
 
-            <div className="flex justify-center items-center w-full pt-4">
-              <p className="font-semibold text-center text-xl sm:w-3/4 md:w-2/4 text-ellipsis">
-                Consultá más sobre los próximos cursos de Recursos humanos,
-                habilidades blandas y desarrollo profesional.
-              </p>
-            </div>
-            <div className="flex justify-center items-center w-full pb-4">
-              <p className="font-semibold text-center text-xl sm:w-3/4 md:w-2/4 text-ellipsis">
-                Actualizamos el contenido y brindamos más cursos cada año.
-              </p>
-            </div>
-          </section>
-        </div>
+          <div className="flex justify-center items-center w-full pt-4">
+            <p className="font-semibold text-center text-xl sm:w-3/4 md:w-2/4 text-ellipsis">
+              Consultá más sobre los próximos cursos de Recursos humanos,
+              habilidades blandas y desarrollo profesional.
+            </p>
+          </div>
+          <div className="flex justify-center items-center w-full pb-4">
+            <p className="font-semibold text-center text-xl sm:w-3/4 md:w-2/4 text-ellipsis">
+              Actualizamos el contenido y brindamos más cursos cada año.
+            </p>
+          </div>
+        </section>
         <section className="flex flex-col justify-center items-center p-6 md:p-12 flex-wrap">
           <h2
             className=" p-10 font-bold text-2xl text-center text-ellipsis md:text-3xl md:pb-12 border-t-2"
