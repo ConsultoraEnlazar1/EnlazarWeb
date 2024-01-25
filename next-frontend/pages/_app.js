@@ -24,8 +24,12 @@ export function ScrollToTop() {
             top:
               viewport < 1024 && viewport > 780
                 ? document.body.scrollHeight - 1500
-                : viewport <= 780
+                : viewport <= 780 && viewport >= 500
                 ? document.body.scrollHeight - 1350
+                : viewport < 500 && viewport > 400
+                ? document.body.scrollHeight - 1450
+                : viewport < 380
+                ? document.body.scrollHeight - 1580
                 : document.body.scrollHeight - 1150,
             behavior: "smooth",
           });
