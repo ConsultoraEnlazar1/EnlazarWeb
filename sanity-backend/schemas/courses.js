@@ -31,16 +31,6 @@ export default {
       validation: (Rule) => Rule.required().positive(),
     },
     {
-      name: 'orderDesktop',
-      type: 'number',
-      title: 'Orden de importancia para pantallas grandes',
-    },
-    {
-      name: 'orderMiddleScreen',
-      type: 'number',
-      title: 'Orden de importancia para pantallas medianas',
-    },
-    {
       name: 'inscriptionLink',
       type: 'string',
       title: 'Link Google Form',

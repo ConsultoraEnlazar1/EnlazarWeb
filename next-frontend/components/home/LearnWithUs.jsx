@@ -6,36 +6,18 @@ import diploma from "public/images/Diploma.png";
 import BenefitCard from "../card/BenefitCard";
 import ConsultationForm from "../forms/ConsultationForm";
 import { useEffect, useState } from "react";
-import useViewportWidth from "@/lib/hooks/useViewportWidth";
 
 export const LearnWithUs = ({ courses, benefits }) => {
-  const viewport = useViewportWidth();
   const benefitsWithUrl = benefits
     .filter((item) => item.link)
     .sort((a, b) => a.order - b.order);
   const benefitsWithoutUrl = benefits
     .filter((item) => !item.link)
     .sort((a, b) => a.order - b.order);
-  const coursesMobile = courses.sort((a, b) => a.order - b.order);
   //Form component functions
-  const [coursesDesktop, setCoursesDesktop] = useState([]);
-  const [coursesMiddleScreen, setCoursesMiddleScreen] = useState([]);
   const [openForm, setOpenForm] = useState(false);
   const [section, setSection] = useState("");
   const [title, setTitle] = useState("");
-
-  useEffect(() => {
-    if (viewport && courses?.length) {
-      const coursesOrdered = [...courses].sort(
-        (a, b) => a.orderDesktop - b.orderDesktop
-      );
-      const coursesOrderedMiddle = [...courses].sort(
-        (a, b) => a.orderMiddleScreen - b.orderMiddleScreen
-      );
-
-      setCoursesMiddleScreen(coursesOrderedMiddle);
-    }
-  }, [viewport]);
 
   const handleOpenForm = (e) => {
     e.preventDefault();
@@ -84,23 +66,13 @@ export const LearnWithUs = ({ courses, benefits }) => {
           </div>
         </div>
         <section className="flex flex-col flex-wrap justify-center items-center h-auto gap-6 px-6 py-6 w-full lg:relative lg:flex-row lg:justify-center lg:items-center lg:px-4 lg:py-10 bg-grey">
-          {viewport && viewport < 1024
-            ? courses.map((course) => (
-                <CourseCard
-                  key={course._id}
-                  course={course}
-                  handleOpenForm={handleOpenForm}
-                />
-              ))
-            : coursesMiddleScreen &&
-              coursesMiddleScreen.map((course) => (
-                <CourseCard
-                  key={course._id}
-                  course={course}
-                  handleOpenForm={handleOpenForm}
-                />
-              ))}
-
+          {courses.map((course) => (
+            <CourseCard
+              key={course._id}
+              course={course}
+              handleOpenForm={handleOpenForm}
+            />
+          ))}
           <div className="flex justify-center items-center w-full pt-4">
             <p className="font-semibold text-center text-xl sm:w-3/4 md:w-2/4 text-ellipsis">
               Consultá más sobre los próximos cursos de Recursos humanos,
