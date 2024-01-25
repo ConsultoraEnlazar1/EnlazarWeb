@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import CookieConsent from "react-cookie-consent";
 import Link from "next/link";
@@ -7,6 +7,46 @@ import PrivacyPolicy from "@/components/privacyPolitics/PrivacyPolicy";
 import { googleAnalyticsId, supabaseKey, supabaseUrl } from "@/lib/enviroment";
 import { SessionContextProvider, useUser } from "@supabase/auth-helpers-react";
 import supabase from "@/lib/supabaseClient";
+import { MyContext, MyProvider } from "@/lib/context/MyContext";
+import useViewportWidth from "@/lib/hooks/useViewportWidth";
+
+export function ScrollToTop() {
+  const router = useRouter();
+  const { scrollContact, setScrollContact, toggleScrollContact } =
+    useContext(MyContext);
+  const viewport = useViewportWidth();
+  useEffect(() => {
+    const handleRouteChange = () => {
+      if (typeof window !== "undefined") {
+        if (scrollContact) {
+          toggleScrollContact();
+          window.scrollTo({
+            top:
+              viewport < 1024 && viewport > 780
+                ? document.body.scrollHeight - 1500
+                : viewport <= 780
+                ? document.body.scrollHeight - 1350
+                : document.body.scrollHeight - 1150,
+            behavior: "smooth",
+          });
+          // Eliminar el parámetro contact de la URL
+        } else {
+          window.scrollTo({ top: 0, behavior: "auto" });
+        }
+      }
+    };
+
+    // Suscribirse a eventos de cambio de ruta
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    // Eliminar suscripción al desmontar el componente
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events, viewport, scrollContact]);
+
+  return null;
+}
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -40,16 +80,17 @@ export default function App({ Component, pageProps }) {
         supabaseClient={supabase}
         initialSession={pageProps.initialSession}
       >
-        <Component {...pageProps} />
-        {open ? (
-          <PrivacyPolicy
-            handleClose={handleClose}
-            scroll={scroll}
-            open={open}
-          />
-        ) : null}
-
-       {/*  <CookieConsent
+        <MyProvider>
+          <Component {...pageProps} />
+          {open ? (
+            <PrivacyPolicy
+              handleClose={handleClose}
+              scroll={scroll}
+              open={open}
+            />
+          ) : null}
+          <ScrollToTop />
+          {/*  <CookieConsent
           location="bottom"
           buttonText="Sí, utilizar cookies"
           cookieName="CookieConsent"
@@ -71,33 +112,34 @@ export default function App({ Component, pageProps }) {
             nuestros servicios. Si acepta o continúa navegando, consideramos que
             acepta su uso. Puede cambiar la configuración ingresa{" "}
             <Link
-              href={
-                "https://support.google.com/accounts/answer/61416?hl=es-419&co=GENIE.Platform%3DDesktop"
+            href={
+              "https://support.google.com/accounts/answer/61416?hl=es-419&co=GENIE.Platform%3DDesktop"
               }
               target="_blank"
               className="font-bold"
-            >
+              >
               aquí
-            </Link>
-            , puedes obtener más información sobre nuestros términos y
-            condiciones{" "}
-            <button onClick={handleClickOpen} className="font-bold">
+              </Link>
+              , puedes obtener más información sobre nuestros términos y
+              condiciones{" "}
+              <button onClick={handleClickOpen} className="font-bold">
               aquí
-            </button>
-          </p>
-          <br />
-          <p className="mb-3">
-            Respetamos la política de protección de datos, para saber más
-            visita:
-          </p>
-          <Link
-            href="http://servicios.infoleg.gob.ar/infolegInternet/anexos/60000-64999/64790/norma.htm"
-            target="_blank"
-            className="border p-2 w-64"
-          >
-            <strong>Política de Protección de Datos</strong>
-          </Link>
-        </CookieConsent> */}
+              </button>
+              </p>
+              <br />
+              <p className="mb-3">
+              Respetamos la política de protección de datos, para saber más
+              visita:
+              </p>
+              <Link
+              href="http://servicios.infoleg.gob.ar/infolegInternet/anexos/60000-64999/64790/norma.htm"
+              target="_blank"
+              className="border p-2 w-64"
+              >
+              <strong>Política de Protección de Datos</strong>
+              </Link>
+            </CookieConsent> */}
+        </MyProvider>
       </SessionContextProvider>
     </>
   );
