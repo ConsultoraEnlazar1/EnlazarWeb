@@ -22,6 +22,7 @@ import Box from "@mui/material/Box";
 import Tooltip from "@mui/material/Tooltip";
 import Avatar from "@mui/material/Avatar";
 import { useUser, useSupabaseClient } from "@supabase/auth-helpers-react";
+import { MyContext } from "@/lib/context/MyContext";
 // import AccountCircle from '@mui/icons-material/AccountCircle';
 
 const AccountMenu = ({
@@ -76,6 +77,7 @@ const AccountMenu = ({
 };
 
 export const Navbar = () => {
+  const { setScrollContact, toggleScrollContact } = useContext(MyContext);
   const [navbar, setNavbar] = useState(false);
   const router = useRouter();
   const session = useSession();
@@ -104,6 +106,13 @@ export const Navbar = () => {
 
   const handleRedirect = (e) => {
     localStorage.setItem("pathname", e.target.accessKey);
+    if (e.target.id && e.target.id === "contact") {
+      console.log("me llame");
+      setScrollContact(true);
+    }
+    if (navbar) {
+      setNavbar(!navbar);
+    }
   };
 
   const getUserName = async () => {
@@ -142,7 +151,7 @@ export const Navbar = () => {
     <nav className="w-full bg-white text-dark shadow font-Noah fixed h-28 z-50">
       <div className="mx-6 justify-between xl:mx-auto xl:max-w-7xl xl:items-center xl:flex xl:px-3 mt-4">
         <div className="flex items-center justify-between py-3 xl:py-5 xl:block">
-          <Link href="/#top" onClick={handleRedirect}>
+          <Link href="/" onClick={handleRedirect}>
             <Image
               src={path}
               style={{
@@ -201,7 +210,7 @@ export const Navbar = () => {
             <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-[1.1rem] md:text-base">
               <Link
                 className="flex flex-1 w-full justify-center self-center"
-                href="/team#top"
+                href="/team"
                 accessKey="team"
                 onClick={handleRedirect}
               >
@@ -211,7 +220,7 @@ export const Navbar = () => {
             <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-[1.1rem] md:text-base whitespace-nowrap">
               <Link
                 className="flex flex-1 w-full justify-center self-center"
-                href="/services#top"
+                href="/services"
                 accessKey="services"
                 onClick={handleRedirect}
               >
@@ -221,7 +230,7 @@ export const Navbar = () => {
             <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-[1.1rem] md:text-base whitespace-nowrap">
               <Link
                 className="flex flex-1 w-full justify-center self-center"
-                href="/courses#top"
+                href="/courses"
                 accessKey="courses"
                 onClick={handleRedirect}
               >
@@ -231,7 +240,7 @@ export const Navbar = () => {
             <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-[1.1rem] md:text-base">
               <Link
                 className="flex flex-1 w-full justify-center self-center"
-                href="/community#top"
+                href="/community"
                 accessKey="community"
                 onClick={handleRedirect}
               >
@@ -241,7 +250,7 @@ export const Navbar = () => {
             <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-[1.1rem] md:text-base">
               <Link
                 className="flex flex-1 w-full justify-center self-center"
-                href="/blog#top"
+                href="/blog"
               >
                 Blog
               </Link>
@@ -249,10 +258,11 @@ export const Navbar = () => {
             <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-[1.1rem] md:text-base">
               <Link
                 className="flex flex-1 w-full justify-center self-center"
-                href="/#contact"
+                href="/"
                 scroll={false}
-                accessKey="#contact"
+                accessKey="/"
                 onClick={handleRedirect}
+                id="contact"
               >
                 Contacto
               </Link>
