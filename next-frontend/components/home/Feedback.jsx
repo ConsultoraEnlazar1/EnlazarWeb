@@ -54,7 +54,7 @@ export const Feedback = () => {
         duration: viewport && viewport < 980 ? 1 : 2.5, // Duración de la animación en segundos
         onRepeat: false,
         onUpdate: (latest) => {
-          if (!counter) setCounter(Math.round(latest)); // Actualizar el estado con el último valor
+          if (!counter || counter !== 15) setCounter(Math.round(latest)); // Actualizar el estado con el último valor
         },
       });
 
@@ -68,7 +68,7 @@ export const Feedback = () => {
         duration: viewport && viewport < 980 ? 1 : 2.5,
         onRepeat: false, // Duración de la animación en segundos
         onUpdate: (latest) => {
-          if (!counter2) setCounter2(Math.round(latest)); // Actualizar el estado con el último valor
+          if (!counter2 || counter2 !== 2) setCounter2(Math.round(latest)); // Actualizar el estado con el último valor
         },
       });
 
@@ -81,7 +81,7 @@ export const Feedback = () => {
         duration: viewport && viewport < 980 ? 1 : 2.5,
         onRepeat: false, // Duración de la animación en segundos
         onUpdate: (latest) => {
-          if (!counter3) setCounter3(Math.round(latest)); // Actualizar el estado con el último valor
+          if (!counter3 || counter3 !== 10) setCounter3(Math.round(latest)); // Actualizar el estado con el último valor
         },
       });
 
@@ -94,7 +94,7 @@ export const Feedback = () => {
         duration: viewport && viewport < 980 ? 1 : 2.5,
         onRepeat: false, // Duración de la animación en segundos
         onUpdate: (latest) => {
-          if (!counter4) setCounter4(Math.round(latest)); // Actualizar el estado con el último valor
+          if (!counter4 || counter4 !== 900) setCounter4(Math.round(latest)); // Actualizar el estado con el último valor
         },
       });
 
@@ -107,7 +107,7 @@ export const Feedback = () => {
         duration: viewport && viewport < 980 ? 1 : 2.5,
         onRepeat: false, // Duración de la animación en segundos
         onUpdate: (latest) => {
-          if (!counter5) setCounter5(Math.round(latest)); // Actualizar el estado con el último valor
+          if (!counter5 || counter5 !== 5) setCounter5(Math.round(latest)); // Actualizar el estado con el último valor
         },
       });
 
@@ -119,7 +119,7 @@ export const Feedback = () => {
       const controls = animate(0, 90, {
         duration: viewport && viewport < 980 ? 1 : 2.5, // Duración de la animación en segundos
         onUpdate: (latest) => {
-          if (!counter6) setCounter6(Math.round(latest)); // Actualizar el estado con el último valor
+          if (!counter6 || counter6 !== 90) setCounter6(Math.round(latest)); // Actualizar el estado con el último valor
         },
       });
 
