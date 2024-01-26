@@ -11,11 +11,12 @@ import Image from "next/image";
 import logo from "public/images/isotipo-enlazar-blanco.png";
 import { useContext, useState } from "react";
 import PrivacyPolicy from "../privacyPolitics/PrivacyPolicy";
+import { MyContext } from "@/lib/context/MyContext";
 
 export const Footer = () => {
   const [open, setOpen] = useState(false);
   const [scroll, setScroll] = useState("paper");
-
+  const { setScrollContact, toggleScrollContact } = useContext(MyContext);
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -26,6 +27,9 @@ export const Footer = () => {
 
   const handleRedirect = (e) => {
     localStorage.setItem("pathname", e.target.accessKey);
+    if (e.target.id && e.target.id === "contact") {
+      setScrollContact(true);
+    }
   };
 
   const gradient = {
@@ -54,7 +58,7 @@ export const Footer = () => {
           <div className="flex flex-row xsm:max-xl:flex-col justify-center items-center xsm:max-sm:w-full">
             <div className="flex flex-row justify-center items-center ">
               <div className="pt-3 px-0 pb-4 xsm:max-lg:hidden ">
-                <Link href="/#top" onClick={handleRedirect}>
+                <Link href="/" onClick={handleRedirect}>
                   <Image
                     className="min-w-[60px]"
                     width={60}
@@ -68,7 +72,7 @@ export const Footer = () => {
                 <ul className="flex flex-row border-r-0 justify-center items-center self-center no-underline text-white list-none xsm:max-lg:flex-col py-2 px-2 xsm:max-lg:p-0 ">
                   <li className="lg:border-r lg:border-solid lg:border-r-white px-2 py-0 xsm:max-lg:pb-2">
                     <Link
-                      href="/team#top"
+                      href="/team"
                       className="hover:font-bold transition-all"
                       accessKey="team"
                       onClick={handleRedirect}
@@ -78,7 +82,7 @@ export const Footer = () => {
                   </li>
                   <li className="lg:border-r lg:border-solid lg:border-r-white px-2 py-0 xsm:max-lg:pb-2 whitespace-nowrap">
                     <Link
-                      href="/services#top"
+                      href="/services"
                       className="hover:font-bold transition-all"
                       accessKey="services"
                       onClick={handleRedirect}
@@ -88,7 +92,7 @@ export const Footer = () => {
                   </li>
                   <li className="lg:border-r lg:border-solid lg:border-r-white pl-2 pr-2 xsm:max-lg:pb-2">
                     <Link
-                      href="/courses#top"
+                      href="/courses"
                       className="hover:font-bold whitespace-nowrap transition-all"
                       accessKey="courses"
                       onClick={handleRedirect}
@@ -98,7 +102,7 @@ export const Footer = () => {
                   </li>
                   <li className="lg:border-r lg:border-solid lg:border-r-white px-2 py-0 xsm:max-lg:pb-2">
                     <Link
-                      href="/community#top"
+                      href="/community"
                       className="hover:font-bold transition-all"
                       accessKey="community"
                       onClick={handleRedirect}
@@ -108,7 +112,7 @@ export const Footer = () => {
                   </li>
                   <li className="lg:border-r lg:border-solid lg:border-r-white px-2 py-0 xsm:max-lg:pb-2">
                     <Link
-                      href="/blog#top"
+                      href="/blog"
                       className="hover:font-bold transition-all"
                     >
                       Blog
@@ -116,10 +120,11 @@ export const Footer = () => {
                   </li>
                   <li className="lg:border-r lg:border-solid lg:border-r-white px-2 xsm:max-lg:pb-2">
                     <Link
-                      href="/#contact"
+                      href="/"
                       className="hover:font-bold transition-all"
-                      accessKey="#contact"
+                      accessKey="/"
                       onClick={handleRedirect}
+                      id="contact"
                     >
                       Contacto
                     </Link>
@@ -209,7 +214,7 @@ export const Footer = () => {
         </div>
         <hr />
         <div className="pt-3 px-0 pb-4 hidden xsm:max-lg:block xsm:max-lg:pt-4 ">
-          <Link href="/#top" onClick={handleRedirect}>
+          <Link href="/" onClick={handleRedirect}>
             <Image
               width={60}
               height={"auto"}

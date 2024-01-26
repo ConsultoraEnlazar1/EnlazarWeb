@@ -42,7 +42,7 @@ const WorkWithUs = () => {
             y lo tendremos en cuenta para futuras búsquedas.
           </p>
           <button
-            className="bg-yellow rounded-full m-4 p-3 md:px-8 lg:py-2 lg:px-10 font-semibold uppercase xsm:self-center lg:self-start text-dark xsm:px-8 text-base lg:text-sm"
+            className="bg-yellow rounded-full m-4 p-3 md:px-8 lg:py-2 lg:px-10 font-semibold uppercase xsm:self-center lg:self-start text-dark xsm:px-8 text-base"
             onClick={handleOpenCv}
           >
             Cargar mi CV

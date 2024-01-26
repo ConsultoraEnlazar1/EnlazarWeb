@@ -118,7 +118,7 @@ const ContactUsForm = () => {
     <>
       <div
         id="contact"
-        className="border flex flex-col justify-center items-center md:h-[50rem] h-[40rem] md:w-screen text-center"
+        className="flex flex-col justify-center items-center md:h-[50rem] h-[40rem] md:w-screen text-center"
       >
         <div className="">
           <Image
