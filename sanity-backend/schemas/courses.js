@@ -19,12 +19,6 @@ export default {
       },
     },
     {
-      name: 'price',
-      type: 'number',
-      title: 'Precio',
-      validation: (Rule) => Rule.required().positive(),
-    },
-    {
       name: 'order',
       type: 'number',
       title: 'Orden de importancia',
