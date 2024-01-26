@@ -107,7 +107,6 @@ export const Navbar = () => {
   const handleRedirect = (e) => {
     localStorage.setItem("pathname", e.target.accessKey);
     if (e.target.id && e.target.id === "contact") {
-      console.log("me llame");
       setScrollContact(true);
     }
     if (navbar) {
