@@ -23,7 +23,10 @@ export const Layout = ({ title, content, children }) => {
           name="keywords"
           content="Recursos humanos, psicologia, psicología laboral, consultora enlazar, enlazar, consultoría, relaciones laborales, trabajo, educación, capital humano, talento, cursos, cursos online, capacitaciones, webinars gratuitos, curriculum, revisión de cv, empleabilidad, orientación vocacional, calidad de trabajo, comunidad, encontrar empleo, desarrollo profesional, reclutamiento, selección de personal, recruiting, coaching, acompañamiento personalizado, asesorías, recursos gratis, consultas, cosching, experiencia laboral,"
         />
+        <meta name="author" content="Consultora Enlazar" />
+        <meta name="robots" content="index, follow" />
         <title>{title}</title>
+        <link rel="canonical" href="https://www.consultoraenlazar.xyz/" />
         <link rel="icon" href="/images/favicon/favicon.ico" />
         <link
           rel="apple-touch-icon"
@@ -102,6 +105,8 @@ export const Layout = ({ title, content, children }) => {
         />
         <meta name="theme-color" content="#34668a" />
         <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Consultora Enlazar" />
+        <meta name="twitter:description" content={content} />
         <meta property="og:title" content="Consultora Enlazar" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.consultoraenlazar.xyz" />
